@@ -1,7 +1,7 @@
 [project]
 name = "close-llm-agent"
 version = "0.0.1"
-description = "Talk to any LLM with hands-free voice interaction, voice interruption"
+description = "My demo of llm agents, not so open."
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
 dependencies = [
@@ -35,6 +35,12 @@ dependencies = [
     "uvicorn[standard]>=0.33.0",
     "websocket-client>=1.8.0",
     "pytest>=8.3.5",
+    "pytest-asyncio>=0.25.3",
+    "pytest-tornasync>=0.6.0",
+    "pytest-trio>=0.8.0",
+    "pytest-twisted>=1.14.3",
+    "twisted>=24.11.0",
+    "anyio",
 ]
 
 [tool.pixi.project]
@@ -42,7 +48,7 @@ channels = ["conda-forge"]
 platforms = ["win-64", "linux-64"]
 
 [tool.pixi.pypi-dependencies]
-open-llm-vtuber = { path = ".", editable = true }
+close-llm-agent = { path = ".", editable = true }
 
 [tool.pixi.dependencies]
 cudnn = ">=8.0,<9"

@@ -28,16 +28,20 @@ class VADEngine(VADInterface):
         required_hits: int = 3,
         required_misses: int = 24,
         smoothing_window: int = 5,
+        config: SileroVADConfig = None,
     ):
-        self.config = SileroVADConfig(
-            orig_sr=orig_sr,
-            target_sr=target_sr,
-            prob_threshold=prob_threshold,
-            db_threshold=db_threshold,
-            required_hits=required_hits,
-            required_misses=required_misses,
-            smoothing_window=smoothing_window,
-        )
+        if config is not None:
+            self.config = config
+        else:
+            self.config = SileroVADConfig(
+                orig_sr=orig_sr,
+                target_sr=target_sr,
+                prob_threshold=prob_threshold,
+                db_threshold=db_threshold,
+                required_hits=required_hits,
+                required_misses=required_misses,
+                smoothing_window=smoothing_window,
+            )
         self.model = self.load_vad_model()
         self.state = StateMachine(self.config)
         self.window_size_samples = 512 if self.config.target_sr == 16000 else 256
@@ -192,8 +196,13 @@ async def vad_main():
     from tqdm.asyncio import tqdm
     import websockets
 
+    async def data_wrapper(websocket):
+        async for chunk in websocket:
+            yield chunk
+
     async def audio_handler(websocket):
-        async for chunk in tqdm(websocket, desc="Audio chunk"):
+        async for chunk in tqdm(data_wrapper(websocket), desc="Audio chunk"):
+            # print(len(chunk))
             for _bytes in vad.detect_speech(chunk):
                 print(_bytes[:44])
                 # await audio_queue.put(_bytes)
