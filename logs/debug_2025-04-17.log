@@ -1,0 +1,14 @@
+2025-04-17 10:46:36.055 | INFO     | __main__:run:59 | Open-LLM-VTuber, version v0.0.1 | {}
+2025-04-17 10:46:36.055 | WARNING  | upgrade:sync_user_config:352 | 警告：未找到conf.yaml文件 | {}
+2025-04-17 10:46:36.057 | WARNING  | upgrade:sync_user_config:353 | 正在从模板复制默认配置 | {}
+2025-04-17 10:46:36.089 | INFO     | src.close_llm_agent.service_context:init_live2d:156 | Initializing Live2D: shizuku-local | {}
+2025-04-17 10:46:36.089 | CRITICAL | src.close_llm_agent.live2d_model:_lookup_model_info:109 | Model dictionary file not found at model_dict.json. | {}
+2025-04-17 10:46:36.089 | CRITICAL | src.close_llm_agent.service_context:init_live2d:161 | Error initializing Live2D: [Errno 2] No such file or directory: 'model_dict.json' | {}
+2025-04-17 10:46:36.089 | CRITICAL | src.close_llm_agent.service_context:init_live2d:162 | Try to proceed without Live2D... | {}
+2025-04-17 10:46:36.089 | INFO     | src.close_llm_agent.service_context:init_asr:166 | Initializing ASR: sherpa_onnx_asr | {}
+2025-04-17 10:46:36.291 | INFO     | src.close_llm_agent.asr.sherpa_onnx_asr:__init__:81 | Sherpa-Onnx-ASR: Using cpu for inference | {}
+2025-04-17 10:46:36.291 | WARNING  | src.close_llm_agent.asr.sherpa_onnx_asr:_create_recognizer:166 | SenseVoice model not found. Downloading the model... | {}
+2025-04-17 10:46:36.292 | WARNING  | src.close_llm_agent.asr.utils:check_and_extract_local_file:160 | Local file not found or not a tar.bz2 archive: models\sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2 | {}
+2025-04-17 10:46:36.292 | INFO     | src.close_llm_agent.asr.sherpa_onnx_asr:_create_recognizer:176 | Local file not found. Downloading... | {}
+2025-04-17 10:46:36.294 | INFO     | src.close_llm_agent.asr.utils:download_and_extract:82 | 🏃‍♂️Downloading https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2 to ./models\sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2... | {}
+2025-04-17 10:46:38.566 | DEBUG    | src.close_llm_agent.asr.utils:download_and_extract:86 | Total file size: 999.33 MB | {}

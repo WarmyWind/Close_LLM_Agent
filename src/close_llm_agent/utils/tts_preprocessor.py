@@ -1,7 +1,7 @@
 import re
 import unicodedata
 from loguru import logger
-from ..translate.translate_interface import TranslateInterface
+# from ..translate.translate_interface import TranslateInterface
 
 
 def tts_filter(
@@ -11,7 +11,7 @@ def tts_filter(
     ignore_parentheses: bool,
     ignore_asterisks: bool,
     ignore_angle_brackets: bool,
-    translator: TranslateInterface | None = None,
+    # translator: TranslateInterface | None = None,
 ) -> str:
     """
     Filter or do anything to the text before TTS generates the audio.
@@ -66,15 +66,15 @@ def tts_filter(
             logger.warning(f"Error removing special characters: {e}")
             logger.warning(f"Text: {text}")
             logger.warning("Skipping...")
-    if translator:
-        try:
-            logger.info("Translating...")
-            text = translator.translate(text)
-            logger.info(f"Translated: {text}")
-        except Exception as e:
-            logger.critical(f"Error translating: {e}")
-            logger.critical(f"Text: {text}")
-            logger.warning("Skipping...")
+    # if translator:
+    #     try:
+    #         logger.info("Translating...")
+    #         text = translator.translate(text)
+    #         logger.info(f"Translated: {text}")
+    #     except Exception as e:
+    #         logger.critical(f"Error translating: {e}")
+    #         logger.critical(f"Text: {text}")
+    #         logger.warning("Skipping...")
 
     logger.debug(f"Filtered text: {text}")
     return text
