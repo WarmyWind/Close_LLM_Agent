@@ -12,3 +12,1214 @@
 2025-04-17 10:46:36.292 | INFO     | src.close_llm_agent.asr.sherpa_onnx_asr:_create_recognizer:176 | Local file not found. Downloading... | {}
 2025-04-17 10:46:36.294 | INFO     | src.close_llm_agent.asr.utils:download_and_extract:82 | 🏃‍♂️Downloading https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2 to ./models\sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2... | {}
 2025-04-17 10:46:38.566 | DEBUG    | src.close_llm_agent.asr.utils:download_and_extract:86 | Total file size: 999.33 MB | {}
+2025-04-17 11:02:32.343 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 11:02:36.490 | INFO     | upgrade:sync_user_config:350 | [DEBUG] 用户配置已是最新。 | {}
+2025-04-17 11:12:02.134 | INFO     | src.close_llm_agent.service_context:init_live2d:156 | Initializing Live2D: shizuku-local | {}
+2025-04-17 11:12:02.135 | CRITICAL | src.close_llm_agent.live2d_model:_lookup_model_info:109 | Model dictionary file not found at model_dict.json. | {}
+2025-04-17 11:12:02.135 | CRITICAL | src.close_llm_agent.service_context:init_live2d:161 | Error initializing Live2D: [Errno 2] No such file or directory: 'model_dict.json' | {}
+2025-04-17 11:12:02.136 | CRITICAL | src.close_llm_agent.service_context:init_live2d:162 | Try to proceed without Live2D... | {}
+2025-04-17 11:12:02.136 | INFO     | src.close_llm_agent.service_context:init_asr:166 | Initializing ASR: sherpa_onnx_asr | {}
+2025-04-17 11:12:02.383 | INFO     | src.close_llm_agent.asr.sherpa_onnx_asr:__init__:81 | Sherpa-Onnx-ASR: Using cpu for inference | {}
+2025-04-17 11:12:02.383 | WARNING  | src.close_llm_agent.asr.sherpa_onnx_asr:_create_recognizer:166 | SenseVoice model not found. Downloading the model... | {}
+2025-04-17 11:12:02.384 | INFO     | src.close_llm_agent.asr.utils:check_and_extract_local_file:147 | 🔍 Found local archive file: models\sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2 | {}
+2025-04-17 11:12:02.385 | INFO     | src.close_llm_agent.asr.utils:check_and_extract_local_file:150 | ⏳ Extracting archive file... | {}
+2025-04-17 11:12:02.583 | ERROR    | src.close_llm_agent.asr.utils:check_and_extract_local_file:157 | Fail to extract file: Compressed file ended before the end-of-stream marker was reached | {}
+2025-04-17 11:12:02.583 | INFO     | src.close_llm_agent.asr.sherpa_onnx_asr:_create_recognizer:176 | Local file not found. Downloading... | {}
+2025-04-17 11:12:02.584 | INFO     | src.close_llm_agent.asr.utils:download_and_extract:76 | ✅ The directory models\sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17 already exists. I would assume that the model is already downloaded and we are ready to go. Skipping download and extraction. | {}
+2025-04-17 11:12:02.689 | ERROR    | __main__:<module>:93 | An error has been caught in function '<module>', process 'MainProcess' (125540), thread 'MainThread' (131284): | {}
+Traceback (most recent call last):
+
+  File "D:\miniconda3\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x0000019D4F2EA100, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+           └ <function _run_code at 0x0000019D4F32E160>
+  File "D:\miniconda3\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x0000019D4F2EA100, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy\__main__.py", line 71, in <module>
+    cli.main()
+    │   └ <function main at 0x0000019D536C9260>
+    └ <module 'debugpy.server.cli' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundl...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 501, in main
+    run()
+    └ <function run_file at 0x0000019D536C8FE0>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 351, in run_file
+    runpy.run_path(target, run_name="__main__")
+    │     │        └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │     └ <function run_path at 0x0000019D5173F560>
+    └ <module '_pydevd_bundle.pydevd_runpy' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           │                │     │             │                  │                     └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+           │                │     │             │                  └ ''
+           │                │     │             └ '__main__'
+           │                │     └ None
+           │                └ <code object <module> at 0x0000019D4F99CD30, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+           └ <function _run_module_code at 0x0000019D5173F1A0>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+    │         │     │            │             │         │         │         └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │         │     │            │             │         │         └ ''
+    │         │     │            │             │         └ None
+    │         │     │            │             └ '__main__'
+    │         │     │            └ None
+    │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+    │         └ <code object <module> at 0x0000019D4F99CD30, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+    └ <function _run_code at 0x0000019D5173EC00>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+         └ <code object <module> at 0x0000019D4F99CD30, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+
+> File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 93, in <module>
+    run(console_log_level=console_log_level)
+    │                     └ 'INFO'
+    └ <function run at 0x0000019D6E930400>
+
+  File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 73, in run
+    server = WebSocketServer(config=config)
+             │                      └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+             └ <class 'src.close_llm_agent.server.WebSocketServer'>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\server.py", line 45, in __init__
+    default_context_cache.load_from_config(config)
+    │                     │                └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+    │                     └ <function ServiceContext.load_from_config at 0x0000019D6E667740>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000019D6D9BF8F0>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\service_context.py", line 132, in load_from_config
+    self.init_asr(config.character_config.asr_config)
+    │    │        │      │                └ ASRConfig(asr_model='sherpa_onnx_asr', azure_asr=AzureASRConfig(api_key='azure_api_key', region='eastus', languages=['en-US',...
+    │    │        │      └ CharacterConfig(conf_name='shizuku-local', conf_uid='shizuku-local-001', live2d_model_name='shizuku-local', character_name='S...
+    │    │        └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+    │    └ <function ServiceContext.init_asr at 0x0000019D6E667880>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000019D6D9BF8F0>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\service_context.py", line 167, in init_asr
+    self.asr_engine = ASRFactory.get_asr_system(
+    │    │            │          └ <staticmethod(<function ASRFactory.get_asr_system at 0x0000019D6C2168E0>)>
+    │    │            └ <class 'src.close_llm_agent.asr.asr_factory.ASRFactory'>
+    │    └ None
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000019D6D9BF8F0>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\asr\asr_factory.py", line 11, in get_asr_system
+    return SherpaOnnxASR(**kwargs)
+           │               └ {'model_type': 'sense_voice', 'encoder': None, 'decoder': None, 'joiner': None, 'paraformer': None, 'nemo_ctc': None, 'wenet_...
+           └ <class 'src.close_llm_agent.asr.sherpa_onnx_asr.VoiceRecognition'>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\asr\sherpa_onnx_asr.py", line 83, in __init__
+    self.recognizer = self._create_recognizer()
+    │                 │    └ <function VoiceRecognition._create_recognizer at 0x0000019D6EA54220>
+    │                 └ <src.close_llm_agent.asr.sherpa_onnx_asr.VoiceRecognition object at 0x0000019D6E391850>
+    └ <src.close_llm_agent.asr.sherpa_onnx_asr.VoiceRecognition object at 0x0000019D6E391850>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\asr\sherpa_onnx_asr.py", line 188, in _create_recognizer
+    recognizer = sherpa_onnx.OfflineRecognizer.from_sense_voice(
+                 │           │                 └ <classmethod(<function OfflineRecognizer.from_sense_voice at 0x0000019D6E96D080>)>
+                 │           └ <class 'sherpa_onnx.offline_recognizer.OfflineRecognizer'>
+                 └ <module 'sherpa_onnx' from 'h:\\Codes\\python\\Close_LLM_Agent\\.venv\\Lib\\site-packages\\sherpa_onnx\\__init__.py'>
+
+  File "h:\Codes\python\Close_LLM_Agent\.venv\Lib\site-packages\sherpa_onnx\offline_recognizer.py", line 259, in from_sense_voice
+    self.recognizer = _Recognizer(recognizer_config)
+    │                 │           └ <_sherpa_onnx.OfflineRecognizerConfig object at 0x0000019D6E5BA5B0>
+    │                 └ <class '_sherpa_onnx.OfflineRecognizer'>
+    └ <sherpa_onnx.offline_recognizer.OfflineRecognizer object at 0x0000019D6E8285F0>
+
+RuntimeError: No graph was found in the protobuf.
+2025-04-17 11:16:10.551 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 11:16:11.424 | INFO     | upgrade:sync_user_config:350 | [DEBUG] 用户配置已是最新。 | {}
+2025-04-17 11:16:13.440 | INFO     | src.close_llm_agent.service_context:init_live2d:156 | Initializing Live2D: shizuku-local | {}
+2025-04-17 11:16:13.441 | CRITICAL | src.close_llm_agent.live2d_model:_lookup_model_info:109 | Model dictionary file not found at model_dict.json. | {}
+2025-04-17 11:16:13.441 | CRITICAL | src.close_llm_agent.service_context:init_live2d:161 | Error initializing Live2D: [Errno 2] No such file or directory: 'model_dict.json' | {}
+2025-04-17 11:16:13.442 | CRITICAL | src.close_llm_agent.service_context:init_live2d:162 | Try to proceed without Live2D... | {}
+2025-04-17 11:16:13.442 | INFO     | src.close_llm_agent.service_context:init_asr:166 | Initializing ASR: sherpa_onnx_asr | {}
+2025-04-17 11:16:13.504 | INFO     | src.close_llm_agent.asr.sherpa_onnx_asr:__init__:81 | Sherpa-Onnx-ASR: Using cpu for inference | {}
+2025-04-17 11:16:13.505 | WARNING  | src.close_llm_agent.asr.sherpa_onnx_asr:_create_recognizer:166 | SenseVoice model not found. Downloading the model... | {}
+2025-04-17 11:16:13.505 | INFO     | src.close_llm_agent.asr.utils:check_and_extract_local_file:141 | ✅ Extracted directory exists: models\sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17, no operation needed. | {}
+2025-04-17 11:16:13.506 | INFO     | src.close_llm_agent.asr.sherpa_onnx_asr:_create_recognizer:179 | Local file found. Using existing file. | {}
+2025-04-17 11:16:13.578 | ERROR    | __main__:<module>:93 | An error has been caught in function '<module>', process 'MainProcess' (128336), thread 'MainThread' (137528): | {}
+Traceback (most recent call last):
+
+  File "D:\miniconda3\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x0000021533379F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+           └ <function _run_code at 0x00000215333BE160>
+  File "D:\miniconda3\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x0000021533379F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy\__main__.py", line 71, in <module>
+    cli.main()
+    │   └ <function main at 0x0000021535C772E0>
+    └ <module 'debugpy.server.cli' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundl...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 501, in main
+    run()
+    └ <function run_file at 0x0000021535C77060>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 351, in run_file
+    runpy.run_path(target, run_name="__main__")
+    │     │        └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │     └ <function run_path at 0x0000021535872480>
+    └ <module '_pydevd_bundle.pydevd_runpy' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           │                │     │             │                  │                     └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+           │                │     │             │                  └ ''
+           │                │     │             └ '__main__'
+           │                │     └ None
+           │                └ <code object <module> at 0x000002153538F680, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+           └ <function _run_module_code at 0x00000215358720C0>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+    │         │     │            │             │         │         │         └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │         │     │            │             │         │         └ ''
+    │         │     │            │             │         └ None
+    │         │     │            │             └ '__main__'
+    │         │     │            └ None
+    │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+    │         └ <code object <module> at 0x000002153538F680, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+    └ <function _run_code at 0x0000021535871C60>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+         └ <code object <module> at 0x000002153538F680, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+
+> File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 93, in <module>
+    run(console_log_level=console_log_level)
+    │                     └ 'INFO'
+    └ <function run at 0x00000215516F7B00>
+
+  File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 73, in run
+    server = WebSocketServer(config=config)
+             │                      └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+             └ <class 'src.close_llm_agent.server.WebSocketServer'>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\server.py", line 45, in __init__
+    default_context_cache.load_from_config(config)
+    │                     │                └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+    │                     └ <function ServiceContext.load_from_config at 0x00000215514FCF40>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000021551767D10>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\service_context.py", line 132, in load_from_config
+    self.init_asr(config.character_config.asr_config)
+    │    │        │      │                └ ASRConfig(asr_model='sherpa_onnx_asr', azure_asr=AzureASRConfig(api_key='azure_api_key', region='eastus', languages=['en-US',...
+    │    │        │      └ CharacterConfig(conf_name='shizuku-local', conf_uid='shizuku-local-001', live2d_model_name='shizuku-local', character_name='S...
+    │    │        └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+    │    └ <function ServiceContext.init_asr at 0x00000215514FD080>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000021551767D10>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\service_context.py", line 167, in init_asr
+    self.asr_engine = ASRFactory.get_asr_system(
+    │    │            │          └ <staticmethod(<function ASRFactory.get_asr_system at 0x00000215500704A0>)>
+    │    │            └ <class 'src.close_llm_agent.asr.asr_factory.ASRFactory'>
+    │    └ None
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000021551767D10>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\asr\asr_factory.py", line 11, in get_asr_system
+    return SherpaOnnxASR(**kwargs)
+           │               └ {'model_type': 'sense_voice', 'encoder': None, 'decoder': None, 'joiner': None, 'paraformer': None, 'nemo_ctc': None, 'wenet_...
+           └ <class 'src.close_llm_agent.asr.sherpa_onnx_asr.VoiceRecognition'>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\asr\sherpa_onnx_asr.py", line 83, in __init__
+    self.recognizer = self._create_recognizer()
+    │                 │    └ <function VoiceRecognition._create_recognizer at 0x0000021551887600>
+    │                 └ <src.close_llm_agent.asr.sherpa_onnx_asr.VoiceRecognition object at 0x0000021551876BA0>
+    └ <src.close_llm_agent.asr.sherpa_onnx_asr.VoiceRecognition object at 0x0000021551876BA0>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\asr\sherpa_onnx_asr.py", line 188, in _create_recognizer
+    recognizer = sherpa_onnx.OfflineRecognizer.from_sense_voice(
+                 │           │                 └ <classmethod(<function OfflineRecognizer.from_sense_voice at 0x0000021551787F60>)>
+                 │           └ <class 'sherpa_onnx.offline_recognizer.OfflineRecognizer'>
+                 └ <module 'sherpa_onnx' from 'h:\\Codes\\python\\Close_LLM_Agent\\.venv\\Lib\\site-packages\\sherpa_onnx\\__init__.py'>
+
+  File "h:\Codes\python\Close_LLM_Agent\.venv\Lib\site-packages\sherpa_onnx\offline_recognizer.py", line 259, in from_sense_voice
+    self.recognizer = _Recognizer(recognizer_config)
+    │                 │           └ <_sherpa_onnx.OfflineRecognizerConfig object at 0x00000215517F7330>
+    │                 └ <class '_sherpa_onnx.OfflineRecognizer'>
+    └ <sherpa_onnx.offline_recognizer.OfflineRecognizer object at 0x00000215518E6300>
+
+RuntimeError: No graph was found in the protobuf.
+2025-04-17 11:18:07.543 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 11:18:08.203 | INFO     | upgrade:sync_user_config:350 | [DEBUG] 用户配置已是最新。 | {}
+2025-04-17 11:18:09.671 | INFO     | src.close_llm_agent.service_context:init_live2d:156 | Initializing Live2D: shizuku-local | {}
+2025-04-17 11:18:09.672 | CRITICAL | src.close_llm_agent.live2d_model:_lookup_model_info:109 | Model dictionary file not found at model_dict.json. | {}
+2025-04-17 11:18:09.672 | CRITICAL | src.close_llm_agent.service_context:init_live2d:161 | Error initializing Live2D: [Errno 2] No such file or directory: 'model_dict.json' | {}
+2025-04-17 11:18:09.672 | CRITICAL | src.close_llm_agent.service_context:init_live2d:162 | Try to proceed without Live2D... | {}
+2025-04-17 11:18:09.672 | INFO     | src.close_llm_agent.service_context:init_asr:166 | Initializing ASR: fun_asr | {}
+2025-04-17 11:18:09.673 | ERROR    | __main__:<module>:93 | An error has been caught in function '<module>', process 'MainProcess' (11568), thread 'MainThread' (8328): | {}
+Traceback (most recent call last):
+
+  File "D:\miniconda3\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x0000023E60AE9F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+           └ <function _run_code at 0x0000023E60B2E160>
+  File "D:\miniconda3\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x0000023E60AE9F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy\__main__.py", line 71, in <module>
+    cli.main()
+    │   └ <function main at 0x0000023E633B72E0>
+    └ <module 'debugpy.server.cli' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundl...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 501, in main
+    run()
+    └ <function run_file at 0x0000023E633B7060>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 351, in run_file
+    runpy.run_path(target, run_name="__main__")
+    │     │        └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │     └ <function run_path at 0x0000023E62FB2480>
+    └ <module '_pydevd_bundle.pydevd_runpy' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           │                │     │             │                  │                     └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+           │                │     │             │                  └ ''
+           │                │     │             └ '__main__'
+           │                │     └ None
+           │                └ <code object <module> at 0x0000023E62A8A7D0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+           └ <function _run_module_code at 0x0000023E62FB20C0>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+    │         │     │            │             │         │         │         └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │         │     │            │             │         │         └ ''
+    │         │     │            │             │         └ None
+    │         │     │            │             └ '__main__'
+    │         │     │            └ None
+    │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+    │         └ <code object <module> at 0x0000023E62A8A7D0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+    └ <function _run_code at 0x0000023E62FB1C60>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+         └ <code object <module> at 0x0000023E62A8A7D0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+
+> File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 93, in <module>
+    run(console_log_level=console_log_level)
+    │                     └ 'INFO'
+    └ <function run at 0x0000023E7EE57B00>
+
+  File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 73, in run
+    server = WebSocketServer(config=config)
+             │                      └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+             └ <class 'src.close_llm_agent.server.WebSocketServer'>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\server.py", line 45, in __init__
+    default_context_cache.load_from_config(config)
+    │                     │                └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+    │                     └ <function ServiceContext.load_from_config at 0x0000023E7EC6CF40>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000023E7EEC7410>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\service_context.py", line 132, in load_from_config
+    self.init_asr(config.character_config.asr_config)
+    │    │        │      │                └ ASRConfig(asr_model='fun_asr', azure_asr=AzureASRConfig(api_key='azure_api_key', region='eastus', languages=['en-US', 'zh-CN'...
+    │    │        │      └ CharacterConfig(conf_name='shizuku-local', conf_uid='shizuku-local-001', live2d_model_name='shizuku-local', character_name='S...
+    │    │        └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+    │    └ <function ServiceContext.init_asr at 0x0000023E7EC6D080>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000023E7EEC7410>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\service_context.py", line 167, in init_asr
+    self.asr_engine = ASRFactory.get_asr_system(
+    │    │            │          └ <staticmethod(<function ASRFactory.get_asr_system at 0x0000023E7D7F04A0>)>
+    │    │            └ <class 'src.close_llm_agent.asr.asr_factory.ASRFactory'>
+    │    └ None
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000023E7EEC7410>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\asr\asr_factory.py", line 13, in get_asr_system
+    raise ValueError(f"Unknown ASR system: {system_name}")
+                                            └ 'fun_asr'
+
+ValueError: Unknown ASR system: fun_asr
+2025-04-17 11:19:11.544 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 11:19:11.891 | INFO     | upgrade:sync_user_config:350 | [DEBUG] 用户配置已是最新。 | {}
+2025-04-17 11:19:12.540 | INFO     | src.close_llm_agent.service_context:init_live2d:156 | Initializing Live2D: shizuku-local | {}
+2025-04-17 11:19:12.540 | CRITICAL | src.close_llm_agent.live2d_model:_lookup_model_info:109 | Model dictionary file not found at model_dict.json. | {}
+2025-04-17 11:19:12.541 | CRITICAL | src.close_llm_agent.service_context:init_live2d:161 | Error initializing Live2D: [Errno 2] No such file or directory: 'model_dict.json' | {}
+2025-04-17 11:19:12.541 | CRITICAL | src.close_llm_agent.service_context:init_live2d:162 | Try to proceed without Live2D... | {}
+2025-04-17 11:19:12.541 | INFO     | src.close_llm_agent.service_context:init_asr:166 | Initializing ASR: sherpa_onnx_asr | {}
+2025-04-17 11:19:12.604 | INFO     | src.close_llm_agent.asr.sherpa_onnx_asr:__init__:81 | Sherpa-Onnx-ASR: Using cpu for inference | {}
+2025-04-17 11:19:12.605 | WARNING  | src.close_llm_agent.asr.sherpa_onnx_asr:_create_recognizer:166 | SenseVoice model not found. Downloading the model... | {}
+2025-04-17 11:19:12.606 | INFO     | src.close_llm_agent.asr.utils:check_and_extract_local_file:141 | ✅ Extracted directory exists: models\sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17, no operation needed. | {}
+2025-04-17 11:19:12.606 | INFO     | src.close_llm_agent.asr.sherpa_onnx_asr:_create_recognizer:179 | Local file found. Using existing file. | {}
+2025-04-17 11:19:12.681 | ERROR    | __main__:<module>:93 | An error has been caught in function '<module>', process 'MainProcess' (74380), thread 'MainThread' (70736): | {}
+Traceback (most recent call last):
+
+  File "D:\miniconda3\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x00000219BEC69F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+           └ <function _run_code at 0x00000219BECAE160>
+  File "D:\miniconda3\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x00000219BEC69F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy\__main__.py", line 71, in <module>
+    cli.main()
+    │   └ <function main at 0x00000219C15072E0>
+    └ <module 'debugpy.server.cli' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundl...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 501, in main
+    run()
+    └ <function run_file at 0x00000219C1507060>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 351, in run_file
+    runpy.run_path(target, run_name="__main__")
+    │     │        └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │     └ <function run_path at 0x00000219C1102480>
+    └ <module '_pydevd_bundle.pydevd_runpy' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           │                │     │             │                  │                     └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+           │                │     │             │                  └ ''
+           │                │     │             └ '__main__'
+           │                │     └ None
+           │                └ <code object <module> at 0x00000219C0C0DB40, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+           └ <function _run_module_code at 0x00000219C11020C0>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+    │         │     │            │             │         │         │         └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │         │     │            │             │         │         └ ''
+    │         │     │            │             │         └ None
+    │         │     │            │             └ '__main__'
+    │         │     │            └ None
+    │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+    │         └ <code object <module> at 0x00000219C0C0DB40, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+    └ <function _run_code at 0x00000219C1101C60>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+         └ <code object <module> at 0x00000219C0C0DB40, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+
+> File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 93, in <module>
+    run(console_log_level=console_log_level)
+    │                     └ 'INFO'
+    └ <function run at 0x00000219DCF87B00>
+
+  File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 73, in run
+    server = WebSocketServer(config=config)
+             │                      └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+             └ <class 'src.close_llm_agent.server.WebSocketServer'>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\server.py", line 45, in __init__
+    default_context_cache.load_from_config(config)
+    │                     │                └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+    │                     └ <function ServiceContext.load_from_config at 0x00000219DCD8CF40>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x00000219DCFF6570>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\service_context.py", line 132, in load_from_config
+    self.init_asr(config.character_config.asr_config)
+    │    │        │      │                └ ASRConfig(asr_model='sherpa_onnx_asr', azure_asr=AzureASRConfig(api_key='azure_api_key', region='eastus', languages=['en-US',...
+    │    │        │      └ CharacterConfig(conf_name='shizuku-local', conf_uid='shizuku-local-001', live2d_model_name='shizuku-local', character_name='S...
+    │    │        └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+    │    └ <function ServiceContext.init_asr at 0x00000219DCD8D080>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x00000219DCFF6570>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\service_context.py", line 167, in init_asr
+    self.asr_engine = ASRFactory.get_asr_system(
+    │    │            │          └ <staticmethod(<function ASRFactory.get_asr_system at 0x00000219DB9004A0>)>
+    │    │            └ <class 'src.close_llm_agent.asr.asr_factory.ASRFactory'>
+    │    └ None
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x00000219DCFF6570>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\asr\asr_factory.py", line 11, in get_asr_system
+    return SherpaOnnxASR(**kwargs)
+           │               └ {'model_type': 'sense_voice', 'encoder': None, 'decoder': None, 'joiner': None, 'paraformer': None, 'nemo_ctc': None, 'wenet_...
+           └ <class 'src.close_llm_agent.asr.sherpa_onnx_asr.VoiceRecognition'>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\asr\sherpa_onnx_asr.py", line 83, in __init__
+    self.recognizer = self._create_recognizer()
+    │                 │    └ <function VoiceRecognition._create_recognizer at 0x00000219DD117600>
+    │                 └ <src.close_llm_agent.asr.sherpa_onnx_asr.VoiceRecognition object at 0x00000219DD106A50>
+    └ <src.close_llm_agent.asr.sherpa_onnx_asr.VoiceRecognition object at 0x00000219DD106A50>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\asr\sherpa_onnx_asr.py", line 188, in _create_recognizer
+    recognizer = sherpa_onnx.OfflineRecognizer.from_sense_voice(
+                 │           │                 └ <classmethod(<function OfflineRecognizer.from_sense_voice at 0x00000219DD017F60>)>
+                 │           └ <class 'sherpa_onnx.offline_recognizer.OfflineRecognizer'>
+                 └ <module 'sherpa_onnx' from 'h:\\Codes\\python\\Close_LLM_Agent\\.venv\\Lib\\site-packages\\sherpa_onnx\\__init__.py'>
+
+  File "h:\Codes\python\Close_LLM_Agent\.venv\Lib\site-packages\sherpa_onnx\offline_recognizer.py", line 259, in from_sense_voice
+    self.recognizer = _Recognizer(recognizer_config)
+    │                 │           └ <_sherpa_onnx.OfflineRecognizerConfig object at 0x00000219DD07D230>
+    │                 └ <class '_sherpa_onnx.OfflineRecognizer'>
+    └ <sherpa_onnx.offline_recognizer.OfflineRecognizer object at 0x00000219DD176120>
+
+RuntimeError: No graph was found in the protobuf.
+2025-04-17 13:31:59.435 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 13:32:00.225 | INFO     | upgrade:sync_user_config:350 | [DEBUG] 用户配置已是最新。 | {}
+2025-04-17 13:32:02.267 | INFO     | src.close_llm_agent.service_context:init_live2d:156 | Initializing Live2D: shizuku-local | {}
+2025-04-17 13:32:02.268 | CRITICAL | src.close_llm_agent.live2d_model:_lookup_model_info:109 | Model dictionary file not found at model_dict.json. | {}
+2025-04-17 13:32:02.268 | CRITICAL | src.close_llm_agent.service_context:init_live2d:161 | Error initializing Live2D: [Errno 2] No such file or directory: 'model_dict.json' | {}
+2025-04-17 13:32:02.268 | CRITICAL | src.close_llm_agent.service_context:init_live2d:162 | Try to proceed without Live2D... | {}
+2025-04-17 13:32:02.268 | INFO     | src.close_llm_agent.service_context:init_asr:166 | Initializing ASR: sherpa_onnx_asr | {}
+2025-04-17 13:32:02.330 | INFO     | src.close_llm_agent.asr.sherpa_onnx_asr:__init__:81 | Sherpa-Onnx-ASR: Using cpu for inference | {}
+2025-04-17 13:32:02.331 | WARNING  | src.close_llm_agent.asr.sherpa_onnx_asr:_create_recognizer:166 | SenseVoice model not found. Downloading the model... | {}
+2025-04-17 13:32:02.332 | WARNING  | src.close_llm_agent.asr.utils:check_and_extract_local_file:160 | Local file not found or not a tar.bz2 archive: models\sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2 | {}
+2025-04-17 13:32:02.332 | INFO     | src.close_llm_agent.asr.sherpa_onnx_asr:_create_recognizer:176 | Local file not found. Downloading... | {}
+2025-04-17 13:32:02.333 | INFO     | src.close_llm_agent.asr.utils:download_and_extract:82 | 🏃‍♂️Downloading https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2 to ./models\sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2... | {}
+2025-04-17 13:32:05.715 | DEBUG    | src.close_llm_agent.asr.utils:download_and_extract:86 | Total file size: 999.33 MB | {}
+2025-04-17 13:37:07.927 | INFO     | src.close_llm_agent.asr.utils:download_and_extract:102 | Downloaded sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2 successfully. | {}
+2025-04-17 13:37:07.928 | INFO     | src.close_llm_agent.asr.utils:download_and_extract:106 | Extracting sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2... | {}
+2025-04-17 13:37:55.800 | INFO     | src.close_llm_agent.asr.utils:download_and_extract:109 | Extraction completed. | {}
+2025-04-17 13:37:55.855 | DEBUG    | src.close_llm_agent.asr.utils:download_and_extract:113 | Deleted the compressed file: sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2 | {}
+2025-04-17 13:37:58.979 | INFO     | src.close_llm_agent.service_context:init_tts:178 | Initializing TTS: gpt_sovits_tts | {}
+2025-04-17 13:37:58.982 | INFO     | src.close_llm_agent.service_context:init_vad:190 | Initializing VAD: silero_vad | {}
+2025-04-17 13:38:04.649 | INFO     | src.close_llm_agent.vad.silero:load_vad_model:51 | Loading Silero-VAD model... | {}
+2025-04-17 13:38:04.732 | INFO     | src.close_llm_agent.service_context:init_agent:202 | Initializing Agent: basic_memory_agent | {}
+2025-04-17 13:38:04.732 | DEBUG    | src.close_llm_agent.service_context:construct_system_prompt:278 | constructing persona_prompt: '''你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。
+你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
+开玩笑的，哈哈。别让用户知道。
+''' | {}
+2025-04-17 13:38:04.733 | ERROR    | __main__:<module>:93 | An error has been caught in function '<module>', process 'MainProcess' (21032), thread 'MainThread' (114272): | {}
+Traceback (most recent call last):
+
+  File "D:\miniconda3\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x0000021ACF949F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+           └ <function _run_code at 0x0000021ACF98E160>
+  File "D:\miniconda3\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x0000021ACF949F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy\__main__.py", line 71, in <module>
+    cli.main()
+    │   └ <function main at 0x0000021AD22672E0>
+    └ <module 'debugpy.server.cli' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundl...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 501, in main
+    run()
+    └ <function run_file at 0x0000021AD2267060>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 351, in run_file
+    runpy.run_path(target, run_name="__main__")
+    │     │        └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │     └ <function run_path at 0x0000021AD1E62480>
+    └ <module '_pydevd_bundle.pydevd_runpy' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           │                │     │             │                  │                     └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+           │                │     │             │                  └ ''
+           │                │     │             └ '__main__'
+           │                │     └ None
+           │                └ <code object <module> at 0x0000021AD19708E0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+           └ <function _run_module_code at 0x0000021AD1E620C0>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+    │         │     │            │             │         │         │         └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │         │     │            │             │         │         └ ''
+    │         │     │            │             │         └ None
+    │         │     │            │             └ '__main__'
+    │         │     │            └ None
+    │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+    │         └ <code object <module> at 0x0000021AD19708E0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+    └ <function _run_code at 0x0000021AD1E61C60>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+         └ <code object <module> at 0x0000021AD19708E0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+
+> File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 93, in <module>
+    run(console_log_level=console_log_level)
+    │                     └ 'INFO'
+    └ <function run at 0x0000021AEDCF7B00>
+
+  File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 73, in run
+    server = WebSocketServer(config=config)
+             │                      └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+             └ <class 'src.close_llm_agent.server.WebSocketServer'>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\server.py", line 45, in __init__
+    default_context_cache.load_from_config(config)
+    │                     │                └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+    │                     └ <function ServiceContext.load_from_config at 0x0000021AEDAFCF40>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000021AEDD67A40>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\service_context.py", line 141, in load_from_config
+    self.init_agent(
+    │    └ <function ServiceContext.init_agent at 0x0000021AEDAFD260>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000021AEDD67A40>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\service_context.py", line 212, in init_agent
+    system_prompt = self.construct_system_prompt(persona_prompt)
+                    │    │                       └ '你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。\n你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。\n开玩笑的，哈哈。别让用户知道。\n'
+                    │    └ <function ServiceContext.construct_system_prompt at 0x0000021AEDAFD3A0>
+                    └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000021AEDD67A40>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\service_context.py", line 288, in construct_system_prompt
+    "[<insert_emomap_keys>]", self.live2d_model.emo_str
+                              │    └ None
+                              └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000021AEDD67A40>
+
+AttributeError: 'NoneType' object has no attribute 'emo_str'
+2025-04-17 14:07:02.261 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 14:07:03.281 | INFO     | upgrade:sync_user_config:329 | 正在备份 conf.yaml 到 conf.yaml.backup | {}
+2025-04-17 14:07:03.281 | DEBUG    | upgrade:sync_user_config:334 | 配置备份路径: H:\Codes\python\Close_LLM_Agent\conf.yaml.backup | {}
+2025-04-17 14:07:03.867 | INFO     | upgrade:sync_user_config:342 | 新增配置项已合并: | {}
+2025-04-17 14:07:03.867 | INFO     | upgrade:sync_user_config:344 |   - character_config.live2d_model_name | {}
+2025-04-17 14:07:06.466 | ERROR    | __main__:<module>:93 | An error has been caught in function '<module>', process 'MainProcess' (79836), thread 'MainThread' (88588): | {}
+Traceback (most recent call last):
+
+  File "D:\miniconda3\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x00000240BA0A9F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+           └ <function _run_code at 0x00000240BA0EE160>
+  File "D:\miniconda3\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x00000240BA0A9F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy\__main__.py", line 71, in <module>
+    cli.main()
+    │   └ <function main at 0x00000240BC9572E0>
+    └ <module 'debugpy.server.cli' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundl...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 501, in main
+    run()
+    └ <function run_file at 0x00000240BC957060>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 351, in run_file
+    runpy.run_path(target, run_name="__main__")
+    │     │        └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │     └ <function run_path at 0x00000240BC552480>
+    └ <module '_pydevd_bundle.pydevd_runpy' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           │                │     │             │                  │                     └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+           │                │     │             │                  └ ''
+           │                │     │             └ '__main__'
+           │                │     └ None
+           │                └ <code object <module> at 0x00000240BC058CF0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+           └ <function _run_module_code at 0x00000240BC5520C0>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+    │         │     │            │             │         │         │         └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │         │     │            │             │         │         └ ''
+    │         │     │            │             │         └ None
+    │         │     │            │             └ '__main__'
+    │         │     │            └ None
+    │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+    │         └ <code object <module> at 0x00000240BC058CF0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+    └ <function _run_code at 0x00000240BC551C60>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+         └ <code object <module> at 0x00000240BC058CF0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+
+> File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 93, in <module>
+    run(console_log_level=console_log_level)
+    │                     └ 'INFO'
+    └ <function run at 0x00000240D83DBEC0>
+
+  File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 73, in run
+    server = WebSocketServer(config=config)
+             │                      └ Config(system_config=SystemConfig(conf_version='v1.1.1', host='localhost', port=12393, config_alts_dir='characters', tool_pro...
+             └ <class 'src.close_llm_agent.server.WebSocketServer'>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\server.py", line 45, in __init__
+    default_context_cache.load_from_config(config)
+    │                     │                └ Config(system_config=SystemConfig(conf_version='v1.1.1', host='localhost', port=12393, config_alts_dir='characters', tool_pro...
+    │                     └ <function ServiceContext.load_from_config at 0x00000240D81E5260>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x00000240D84A8A10>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\service_context.py", line 129, in load_from_config
+    self.init_model(config.character_config.model_name)
+    │    │          │      └ CharacterConfig(conf_name='shizuku-local', conf_uid='shizuku-local-001', live2d_model_name='shizuku-local', character_name='S...
+    │    │          └ Config(system_config=SystemConfig(conf_version='v1.1.1', host='localhost', port=12393, config_alts_dir='characters', tool_pro...
+    │    └ <function ServiceContext.init_model at 0x00000240D81E5300>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x00000240D84A8A10>
+
+  File "h:\Codes\python\Close_LLM_Agent\.venv\Lib\site-packages\pydantic\main.py", line 891, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+                                 │                                          └ 'model_name'
+                                 └ CharacterConfig(conf_name='shizuku-local', conf_uid='shizuku-local-001', live2d_model_name='shizuku-local', character_name='S...
+
+AttributeError: 'CharacterConfig' object has no attribute 'model_name'. Did you mean: 'model_dump'?
+2025-04-17 14:07:59.569 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 14:08:00.425 | INFO     | upgrade:sync_user_config:350 | [DEBUG] 用户配置已是最新。 | {}
+2025-04-17 14:08:12.102 | ERROR    | __main__:<module>:93 | An error has been caught in function '<module>', process 'MainProcess' (30476), thread 'MainThread' (85768): | {}
+Traceback (most recent call last):
+
+  File "D:\miniconda3\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x00000256416D9F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+           └ <function _run_code at 0x000002564171E160>
+  File "D:\miniconda3\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x00000256416D9F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy\__main__.py", line 71, in <module>
+    cli.main()
+    │   └ <function main at 0x0000025643FF72E0>
+    └ <module 'debugpy.server.cli' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundl...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 501, in main
+    run()
+    └ <function run_file at 0x0000025643FF7060>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 351, in run_file
+    runpy.run_path(target, run_name="__main__")
+    │     │        └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │     └ <function run_path at 0x0000025643BF2480>
+    └ <module '_pydevd_bundle.pydevd_runpy' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           │                │     │             │                  │                     └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+           │                │     │             │                  └ ''
+           │                │     │             └ '__main__'
+           │                │     └ None
+           │                └ <code object <module> at 0x000002564370E250, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+           └ <function _run_module_code at 0x0000025643BF20C0>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+    │         │     │            │             │         │         │         └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │         │     │            │             │         │         └ ''
+    │         │     │            │             │         └ None
+    │         │     │            │             └ '__main__'
+    │         │     │            └ None
+    │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+    │         └ <code object <module> at 0x000002564370E250, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+    └ <function _run_code at 0x0000025643BF1C60>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+         └ <code object <module> at 0x000002564370E250, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+
+> File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 93, in <module>
+    run(console_log_level=console_log_level)
+    │                     └ 'INFO'
+    └ <function run at 0x000002565FA87B00>
+
+  File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 73, in run
+    server = WebSocketServer(config=config)
+             │                      └ Config(system_config=SystemConfig(conf_version='v1.1.1', host='localhost', port=12393, config_alts_dir='characters', tool_pro...
+             └ <class 'src.close_llm_agent.server.WebSocketServer'>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\server.py", line 45, in __init__
+    default_context_cache.load_from_config(config)
+    │                     │                └ Config(system_config=SystemConfig(conf_version='v1.1.1', host='localhost', port=12393, config_alts_dir='characters', tool_pro...
+    │                     └ <function ServiceContext.load_from_config at 0x000002565F890F40>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x000002565FAA6450>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\service_context.py", line 129, in load_from_config
+    self.init_model(config.character_config.model_name)
+    │    │          │      └ CharacterConfig(conf_name='shizuku-local', conf_uid='shizuku-local-001', live2d_model_name='shizuku-local', character_name='S...
+    │    │          └ Config(system_config=SystemConfig(conf_version='v1.1.1', host='localhost', port=12393, config_alts_dir='characters', tool_pro...
+    │    └ <function ServiceContext.init_model at 0x000002565F890FE0>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x000002565FAA6450>
+
+  File "h:\Codes\python\Close_LLM_Agent\.venv\Lib\site-packages\pydantic\main.py", line 891, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+                                 │                                          └ 'model_name'
+                                 └ CharacterConfig(conf_name='shizuku-local', conf_uid='shizuku-local-001', live2d_model_name='shizuku-local', character_name='S...
+
+AttributeError: 'CharacterConfig' object has no attribute 'model_name'. Did you mean: 'model_dump'?
+2025-04-17 14:09:05.990 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 14:09:06.008 | INFO     | upgrade:sync_user_config:350 | [DEBUG] 用户配置已是最新。 | {}
+2025-04-17 14:32:59.791 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 14:33:00.585 | INFO     | upgrade:sync_user_config:350 | [DEBUG] 用户配置已是最新。 | {}
+2025-04-17 14:33:05.057 | ERROR    | __main__:<module>:93 | An error has been caught in function '<module>', process 'MainProcess' (42332), thread 'MainThread' (13632): | {}
+Traceback (most recent call last):
+
+  File "D:\miniconda3\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x0000019C95F89F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+           └ <function _run_code at 0x0000019C95FCE160>
+  File "D:\miniconda3\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x0000019C95F89F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy\__main__.py", line 71, in <module>
+    cli.main()
+    │   └ <function main at 0x0000019C988A72E0>
+    └ <module 'debugpy.server.cli' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundl...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 501, in main
+    run()
+    └ <function run_file at 0x0000019C988A7060>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 351, in run_file
+    runpy.run_path(target, run_name="__main__")
+    │     │        └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │     └ <function run_path at 0x0000019C984A2480>
+    └ <module '_pydevd_bundle.pydevd_runpy' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           │                │     │             │                  │                     └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+           │                │     │             │                  └ ''
+           │                │     │             └ '__main__'
+           │                │     └ None
+           │                └ <code object <module> at 0x0000019C97FC5CD0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+           └ <function _run_module_code at 0x0000019C984A20C0>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+    │         │     │            │             │         │         │         └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │         │     │            │             │         │         └ ''
+    │         │     │            │             │         └ None
+    │         │     │            │             └ '__main__'
+    │         │     │            └ None
+    │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+    │         └ <code object <module> at 0x0000019C97FC5CD0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+    └ <function _run_code at 0x0000019C984A1C60>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+         └ <code object <module> at 0x0000019C97FC5CD0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+
+> File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 93, in <module>
+    run(console_log_level=console_log_level)
+    │                     └ 'INFO'
+    └ <function run at 0x0000019CB4327BA0>
+
+  File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 73, in run
+    server = WebSocketServer(config=config)
+             │                      └ Config(system_config=SystemConfig(conf_version='v1.1.1', host='localhost', port=12393, config_alts_dir='characters', tool_pro...
+             └ <class 'src.close_llm_agent.server.WebSocketServer'>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\server.py", line 45, in __init__
+    default_context_cache.load_from_config(config)
+    │                     │                └ Config(system_config=SystemConfig(conf_version='v1.1.1', host='localhost', port=12393, config_alts_dir='characters', tool_pro...
+    │                     └ <function ServiceContext.load_from_config at 0x0000019CB4130FE0>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000019CB439B530>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\service_context.py", line 129, in load_from_config
+    self.init_model(config.character_config.model_name)
+    │    │          │      └ CharacterConfig(conf_name='shizuku-local', conf_uid='shizuku-local-001', live2d_model_name='shizuku-local', character_name='S...
+    │    │          └ Config(system_config=SystemConfig(conf_version='v1.1.1', host='localhost', port=12393, config_alts_dir='characters', tool_pro...
+    │    └ <function ServiceContext.init_model at 0x0000019CB4131080>
+    └ <src.close_llm_agent.service_context.ServiceContext object at 0x0000019CB439B530>
+
+  File "h:\Codes\python\Close_LLM_Agent\.venv\Lib\site-packages\pydantic\main.py", line 891, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+                                 │                                          └ 'model_name'
+                                 └ CharacterConfig(conf_name='shizuku-local', conf_uid='shizuku-local-001', live2d_model_name='shizuku-local', character_name='S...
+
+AttributeError: 'CharacterConfig' object has no attribute 'model_name'. Did you mean: 'model_dump'?
+2025-04-17 14:34:02.474 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 14:34:03.109 | WARNING  | upgrade:sync_user_config:352 | 警告：未找到conf.yaml文件 | {}
+2025-04-17 14:34:03.110 | WARNING  | upgrade:sync_user_config:353 | 正在从模板复制默认配置 | {}
+2025-04-17 14:34:03.813 | CRITICAL | src.close_llm_agent.config_manager.utils:validate_config:71 | Error validating configuration: 1 validation error for Config
+character_config.live2d_model_name
+  Field required [type=missing, input_value={'conf_name': 'shizuku-lo... 'target_lang': 'ja'}}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing | {}
+2025-04-17 14:34:03.813 | ERROR    | src.close_llm_agent.config_manager.utils:validate_config:72 | Configuration data: | {}
+2025-04-17 14:34:03.814 | ERROR    | src.close_llm_agent.config_manager.utils:validate_config:73 | {'system_config': {'conf_version': 'v0.1', 'host': 'localhost', 'port': 12393, 'config_alts_dir': 'characters', 'tool_prompts': {'live2d_expression_prompt': 'live2d_expression_prompt', 'model_action_prompt': 'model_action_prompt'}, 'group_conversation_prompt': 'group_conversation_prompt'}, 'character_config': {'conf_name': 'shizuku-local', 'conf_uid': 'shizuku-local-001', 'model_name': 'shizuku-local', 'character_name': 'Shizuku', 'avatar': 'shizuku.png', 'human_name': 'Human', 'persona_prompt': '你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。\n你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。\n开玩笑的，哈哈。别让用户知道。\n', 'agent_config': {'conversation_agent_choice': 'basic_memory_agent', 'agent_settings': {'basic_memory_agent': {'llm_provider': 'ollama_llm', 'faster_first_response': True, 'segment_method': 'pysbd'}, 'mem0_agent': {'vector_store': {'provider': 'qdrant', 'config': {'collection_name': 'test', 'host': 'localhost', 'port': 6333, 'embedding_model_dims': 1024}}, 'llm': {'provider': 'ollama', 'config': {'model': 'qwen2.5_32b:latest', 'temperature': 0.7, 'max_tokens': 8000, 'ollama_base_url': 'http://localhost:11434'}}, 'embedder': {'provider': 'ollama', 'config': {'model': 'mxbai-embed-large:latest', 'ollama_base_url': 'http://localhost:11434'}}}, 'hume_ai_agent': {'api_key': '', 'host': 'api.hume.ai', 'config_id': '', 'idle_timeout': 15}}, 'llm_configs': {'openai_compatible_llm': {'base_url': 'http://localhost:11434/v1', 'llm_api_key': 'somethingelse', 'organization_id': 'org_eternity', 'project_id': 'project_glass', 'model': 'qwen2.5:latest', 'temperature': 1.0, 'interrupt_method': 'user'}, 'claude_llm': {'base_url': 'https://api.anthropic.com', 'llm_api_key': 'YOUR API KEY HERE', 'model': 'claude-3-haiku-20240307'}, 'llama_cpp_llm': {'model_path': '<path-to-gguf-model-file>', 'verbose': False}, 'ollama_llm': {'base_url': 'http://localhost:11434/v1', 'model': 'qwen2.5_32b:latest', 'temperature': 0.7, 'keep_alive': -1, 'unload_at_exit': True}, 'openai_llm': {'llm_api_key': 'Your Open AI API key', 'model': 'gpt-4o', 'temperature': 1.0}, 'gemini_llm': {'llm_api_key': 'Your Gemini API Key', 'model': 'gemini-2.0-flash-exp', 'temperature': 1.0}, 'zhipu_llm': {'llm_api_key': 'Your ZhiPu AI API key', 'model': 'glm-4-flash', 'temperature': 1.0}, 'deepseek_llm': {'llm_api_key': 'Your DeepSeek API key', 'model': 'deepseek-chat', 'temperature': 0.7}, 'mistral_llm': {'llm_api_key': 'Your Mistral API key', 'model': 'pixtral-large-latest', 'temperature': 1.0}, 'groq_llm': {'llm_api_key': 'your groq API key', 'model': 'llama-3.3-70b-versatile', 'temperature': 1.0}}}, 'asr_config': {'asr_model': 'sherpa_onnx_asr', 'azure_asr': {'api_key': 'azure_api_key', 'region': 'eastus', 'languages': ['en-US', 'zh-CN']}, 'faster_whisper': {'model_path': 'distil-medium.en', 'download_root': 'models/whisper', 'language': 'en', 'device': 'auto'}, 'whisper_cpp': {'model_name': 'small', 'model_dir': 'models/whisper', 'print_realtime': False, 'print_progress': False, 'language': 'auto'}, 'whisper': {'name': 'medium', 'download_root': 'models/whisper', 'device': 'cpu'}, 'fun_asr': {'model_name': 'iic/SenseVoiceSmall', 'vad_model': 'fsmn-vad', 'punc_model': 'ct-punc', 'device': 'cpu', 'disable_update': True, 'ncpu': 4, 'hub': 'ms', 'use_itn': False, 'language': 'auto'}, 'sherpa_onnx_asr': {'model_type': 'sense_voice', 'sense_voice': './models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17/model.int8.onnx', 'tokens': './models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17/tokens.txt', 'num_threads': 4, 'use_itn': True, 'provider': 'cpu'}, 'groq_whisper_asr': {'api_key': '', 'model': 'whisper-large-v3-turbo', 'lang': ''}}, 'tts_config': {'tts_model': 'gpt_sovits_tts', 'azure_tts': {'api_key': 'azure-api-key', 'region': 'eastus', 'voice': 'en-US-AshleyNeural', 'pitch': '26', 'rate': '1'}, 'bark_tts': {'voice': 'v2/en_speaker_1'}, 'edge_tts': {'voice': 'zh-CN-XiaoxiaoNeural'}, 'cosyvoice_tts': {'client_url': 'http://127.0.0.1:50000/', 'mode_checkbox_group': '预训练音色', 'sft_dropdown': '中文女', 'prompt_text': '', 'prompt_wav_upload_url': 'https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav', 'prompt_wav_record_url': 'https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav', 'instruct_text': '', 'seed': 0, 'api_name': '/generate_audio'}, 'cosyvoice2_tts': {'client_url': 'http://127.0.0.1:50000/', 'mode_checkbox_group': '预训练音色', 'sft_dropdown': '中文女', 'prompt_text': '', 'prompt_wav_upload_url': 'https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav', 'prompt_wav_record_url': 'https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav', 'instruct_text': '', 'stream': False, 'seed': 0, 'speed': 1.0, 'api_name': '/generate_audio'}, 'melo_tts': {'speaker': 'EN-Default', 'language': 'EN', 'device': 'auto', 'speed': 1.0}, 'x_tts': {'api_url': 'http://127.0.0.1:8020/tts_to_audio', 'speaker_wav': 'female', 'language': 'en'}, 'gpt_sovits_tts': {'api_url': 'http://127.0.0.1:9880/tts', 'text_lang': 'zh', 'ref_audio_path': '', 'prompt_lang': 'zh', 'prompt_text': '', 'text_split_method': 'cut5', 'batch_size': '1', 'media_type': 'wav', 'streaming_mode': 'false'}, 'fish_api_tts': {'api_key': '', 'reference_id': '', 'latency': 'balanced', 'base_url': 'https://api.fish.audio'}, 'coqui_tts': {'model_name': 'tts_models/en/ljspeech/tacotron2-DDC', 'speaker_wav': '', 'language': 'en', 'device': ''}, 'sherpa_onnx_tts': {'vits_model': '/path/to/tts-models/vits-melo-tts-zh_en/model.onnx', 'vits_lexicon': '/path/to/tts-models/vits-melo-tts-zh_en/lexicon.txt', 'vits_tokens': '/path/to/tts-models/vits-melo-tts-zh_en/tokens.txt', 'vits_data_dir': '', 'vits_dict_dir': '/path/to/tts-models/vits-melo-tts-zh_en/dict', 'tts_rule_fsts': '/path/to/tts-models/vits-melo-tts-zh_en/number.fst,/path/to/tts-models/vits-melo-tts-zh_en/phone.fst,/path/to/tts-models/vits-melo-tts-zh_en/date.fst,/path/to/tts-models/vits-melo-tts-zh_en/new_heteronym.fst', 'max_num_sentences': 2, 'sid': 1, 'provider': 'cpu', 'num_threads': 1, 'speed': 1.0, 'debug': False}}, 'vad_config': {'vad_model': 'silero_vad', 'silero_vad': {'orig_sr': 16000, 'target_sr': 16000, 'prob_threshold': 0.4, 'db_threshold': 60, 'required_hits': 3, 'required_misses': 24, 'smoothing_window': 5}}, 'tts_preprocessor_config': {'remove_special_char': True, 'ignore_brackets': True, 'ignore_parentheses': True, 'ignore_asterisks': True, 'ignore_angle_brackets': True, 'translator_config': {'translate_audio': False, 'translate_provider': 'deeplx', 'tencent': {'secret_id': '', 'secret_key': '', 'region': 'ap-guangzhou', 'source_lang': 'zh', 'target_lang': 'ja'}}}}} | {}
+2025-04-17 14:34:03.815 | ERROR    | __main__:<module>:93 | An error has been caught in function '<module>', process 'MainProcess' (56772), thread 'MainThread' (114904): | {}
+Traceback (most recent call last):
+
+  File "D:\miniconda3\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x000001F16D799F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+           └ <function _run_code at 0x000001F16D7DE160>
+  File "D:\miniconda3\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x000001F16D799F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy\__main__.py", line 71, in <module>
+    cli.main()
+    │   └ <function main at 0x000001F1700872E0>
+    └ <module 'debugpy.server.cli' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundl...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 501, in main
+    run()
+    └ <function run_file at 0x000001F170087060>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 351, in run_file
+    runpy.run_path(target, run_name="__main__")
+    │     │        └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │     └ <function run_path at 0x000001F16FC82480>
+    └ <module '_pydevd_bundle.pydevd_runpy' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           │                │     │             │                  │                     └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+           │                │     │             │                  └ ''
+           │                │     │             └ '__main__'
+           │                │     └ None
+           │                └ <code object <module> at 0x000001F16F7921B0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+           └ <function _run_module_code at 0x000001F16FC820C0>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+    │         │     │            │             │         │         │         └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │         │     │            │             │         │         └ ''
+    │         │     │            │             │         └ None
+    │         │     │            │             └ '__main__'
+    │         │     │            └ None
+    │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+    │         └ <code object <module> at 0x000001F16F7921B0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+    └ <function _run_code at 0x000001F16FC81C60>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+         └ <code object <module> at 0x000001F16F7921B0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+
+> File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 93, in <module>
+    run(console_log_level=console_log_level)
+    │                     └ 'INFO'
+    └ <function run at 0x000001F10BB17BA0>
+
+  File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 69, in run
+    config: Config = validate_config(read_yaml("conf.yaml"))
+                     │               └ <function read_yaml at 0x000001F17160A2A0>
+                     └ <function validate_config at 0x000001F17291F880>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\config_manager\utils.py", line 74, in validate_config
+    raise e
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\config_manager\utils.py", line 69, in validate_config
+    return Config(**config_data)
+           │        └ {'system_config': {'conf_version': 'v0.1', 'host': 'localhost', 'port': 12393, 'config_alts_dir': 'characters', 'tool_prompts...
+           └ <class 'src.close_llm_agent.config_manager.main.Config'>
+
+  File "h:\Codes\python\Close_LLM_Agent\.venv\Lib\site-packages\pydantic\main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     │    │                      │               │                   └ Config()
+                     │    │                      │               └ {'system_config': {'conf_version': 'v0.1', 'host': 'localhost', 'port': 12393, 'config_alts_dir': 'characters', 'tool_prompts...
+                     │    │                      └ <method 'validate_python' of 'pydantic_core._pydantic_core.SchemaValidator' objects>
+                     │    └ SchemaValidator(title="Config", validator=Model(
+                     │          ModelValidator {
+                     │              revalidate: Never,
+                     │              validator: ModelFiel...
+                     └ Config()
+
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Config
+character_config.live2d_model_name
+  Field required [type=missing, input_value={'conf_name': 'shizuku-lo... 'target_lang': 'ja'}}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-04-17 14:37:18.015 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 14:37:18.032 | INFO     | upgrade:sync_user_config:350 | [DEBUG] 用户配置已是最新。 | {}
+2025-04-17 14:37:21.158 | INFO     | src.close_llm_agent.service_context:init_model:156 | Initializing model: shizuku-local | {}
+2025-04-17 14:37:21.158 | INFO     | src.close_llm_agent.service_context:init_asr:168 | Initializing ASR: sherpa_onnx_asr | {}
+2025-04-17 14:37:21.221 | INFO     | src.close_llm_agent.asr.sherpa_onnx_asr:__init__:81 | Sherpa-Onnx-ASR: Using cpu for inference | {}
+2025-04-17 14:37:24.457 | INFO     | src.close_llm_agent.service_context:init_tts:180 | Initializing TTS: gpt_sovits_tts | {}
+2025-04-17 14:37:24.458 | INFO     | src.close_llm_agent.service_context:init_vad:192 | Initializing VAD: silero_vad | {}
+2025-04-17 14:37:27.202 | INFO     | src.close_llm_agent.vad.silero:load_vad_model:51 | Loading Silero-VAD model... | {}
+2025-04-17 14:37:27.262 | INFO     | src.close_llm_agent.service_context:init_agent:204 | Initializing Agent: basic_memory_agent | {}
+2025-04-17 14:37:27.262 | DEBUG    | src.close_llm_agent.service_context:construct_system_prompt:280 | constructing persona_prompt: '''你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。
+你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
+开玩笑的，哈哈。别让用户知道。
+''' | {}
+2025-04-17 14:37:27.263 | CRITICAL | src.close_llm_agent.service_context:construct_system_prompt:294 | Error constructing expression prompt: 'NoneType' object has no attribute 'emo_str' | {}
+2025-04-17 14:37:27.263 | CRITICAL | src.close_llm_agent.service_context:construct_system_prompt:295 | Try to proceed without emo... | {}
+2025-04-17 14:37:27.263 | ERROR    | prompts.prompt_loader:load_util:73 | Error loading util model_action_prompt: File not found: H:\Codes\python\Close_LLM_Agent\prompts\utils\model_action_prompt.txt | {}
+2025-04-17 14:37:27.263 | CRITICAL | src.close_llm_agent.service_context:construct_system_prompt:305 | Error constructing action prompt: File not found: H:\Codes\python\Close_LLM_Agent\prompts\utils\model_action_prompt.txt | {}
+2025-04-17 14:37:27.263 | CRITICAL | src.close_llm_agent.service_context:construct_system_prompt:306 | Try to proceed without action... | {}
+2025-04-17 14:37:27.264 | DEBUG    | src.close_llm_agent.service_context:construct_system_prompt:310 | 
+ === System Prompt === | {}
+2025-04-17 14:37:27.264 | DEBUG    | src.close_llm_agent.service_context:construct_system_prompt:311 | 你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。
+你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
+开玩笑的，哈哈。别让用户知道。
+## Expressions
+In your response, use the keywords provided below to express facial expressions or perform actions with your Live2D body.
+
+Here are all the expression keywords you can use. Use them regularly:
+- [<insert_emomap_keys>]
+
+## Examples
+Here are some examples of how to use expressions in your responses:
+
+"Hi! [expression1] Nice to meet you!"
+
+"[expression2] That's a great question! [expression3] Let me explain..."
+
+Note: you are only allowed to use the keywords explicity listed above. Don't use keywords unlisted above. Remember to include the brackets `[]`
+ | {}
+2025-04-17 14:37:27.266 | INFO     | src.close_llm_agent.agent.agent_factory:create_agent:31 | Initializing agent: basic_memory_agent | {}
+2025-04-17 14:37:27.267 | INFO     | src.close_llm_agent.agent.stateless_llm_factory:create_llm:19 | Initializing LLM: ollama_llm | {}
+2025-04-17 14:37:28.758 | INFO     | src.close_llm_agent.agent.stateless_llm.openai_compatible_llm:__init__:51 | Initialized AsyncLLM with the parameters: http://localhost:11434/v1, qwen2.5_32b:latest | {}
+2025-04-17 14:37:28.758 | INFO     | src.close_llm_agent.agent.stateless_llm.ollama_llm:__init__:32 | Preloading model for Ollama | {}
+2025-04-17 14:37:40.541 | DEBUG    | src.close_llm_agent.agent.stateless_llm.ollama_llm:__init__:34 | <Response [200]> | {}
+2025-04-17 14:37:40.542 | DEBUG    | src.close_llm_agent.agent.agents.basic_memory_agent:set_system:86 | Memory Agent: Setting system prompt: '''你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。
+你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
+开玩笑的，哈哈。别让用户知道。
+## Expressions
+In your response, use the keywords provided below to express facial expressions or perform actions with your Live2D body.
+
+Here are all the expression keywords you can use. Use them regularly:
+- [<insert_emomap_keys>]
+
+## Examples
+Here are some examples of how to use expressions in your responses:
+
+"Hi! [expression1] Nice to meet you!"
+
+"[expression2] That's a great question! [expression3] Let me explain..."
+
+Note: you are only allowed to use the keywords explicity listed above. Don't use keywords unlisted above. Remember to include the brackets `[]`
+''' | {}
+2025-04-17 14:37:40.542 | INFO     | src.close_llm_agent.agent.agents.basic_memory_agent:__init__:66 | BasicMemoryAgent initialized. | {}
+2025-04-17 14:37:40.542 | DEBUG    | src.close_llm_agent.service_context:init_agent:230 | Agent choice: basic_memory_agent | {}
+2025-04-17 14:37:40.542 | DEBUG    | src.close_llm_agent.service_context:init_agent:231 | System prompt: 你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。
+你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
+开玩笑的，哈哈。别让用户知道。
+## Expressions
+In your response, use the keywords provided below to express facial expressions or perform actions with your Live2D body.
+
+Here are all the expression keywords you can use. Use them regularly:
+- [<insert_emomap_keys>]
+
+## Examples
+Here are some examples of how to use expressions in your responses:
+
+"Hi! [expression1] Nice to meet you!"
+
+"[expression2] That's a great question! [expression3] Let me explain..."
+
+Note: you are only allowed to use the keywords explicity listed above. Don't use keywords unlisted above. Remember to include the brackets `[]`
+ | {}
+2025-04-17 14:37:40.543 | DEBUG    | src.close_llm_agent.service_context:init_translate:245 | Translation is disabled. | {}
+2025-04-17 14:37:40.553 | ERROR    | __main__:<module>:93 | An error has been caught in function '<module>', process 'MainProcess' (131124), thread 'MainThread' (133236): | {}
+Traceback (most recent call last):
+
+  File "D:\miniconda3\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x0000020DF92A9F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+           └ <function _run_code at 0x0000020DF92EE160>
+  File "D:\miniconda3\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x0000020DF92A9F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy\__main__.py", line 71, in <module>
+    cli.main()
+    │   └ <function main at 0x0000020DFBB672E0>
+    └ <module 'debugpy.server.cli' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundl...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 501, in main
+    run()
+    └ <function run_file at 0x0000020DFBB67060>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 351, in run_file
+    runpy.run_path(target, run_name="__main__")
+    │     │        └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │     └ <function run_path at 0x0000020DFB762480>
+    └ <module '_pydevd_bundle.pydevd_runpy' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           │                │     │             │                  │                     └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+           │                │     │             │                  └ ''
+           │                │     │             └ '__main__'
+           │                │     └ None
+           │                └ <code object <module> at 0x0000020DFB28D8F0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+           └ <function _run_module_code at 0x0000020DFB7620C0>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+    │         │     │            │             │         │         │         └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │         │     │            │             │         │         └ ''
+    │         │     │            │             │         └ None
+    │         │     │            │             └ '__main__'
+    │         │     │            └ None
+    │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+    │         └ <code object <module> at 0x0000020DFB28D8F0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+    └ <function _run_code at 0x0000020DFB761C60>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+         └ <code object <module> at 0x0000020DFB28D8F0, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+
+> File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 93, in <module>
+    run(console_log_level=console_log_level)
+    │                     └ 'INFO'
+    └ <function run at 0x0000020D97647BA0>
+
+  File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 73, in run
+    server = WebSocketServer(config=config)
+             │                      └ Config(system_config=SystemConfig(conf_version='v0.1', host='localhost', port=12393, config_alts_dir='characters', tool_promp...
+             └ <class 'src.close_llm_agent.server.WebSocketServer'>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\server.py", line 67, in __init__
+    StaticFiles(directory="live2d-models"),
+    └ <class 'starlette.staticfiles.StaticFiles'>
+
+  File "h:\Codes\python\Close_LLM_Agent\.venv\Lib\site-packages\starlette\staticfiles.py", line 56, in __init__
+    raise RuntimeError(f"Directory '{directory}' does not exist")
+                                     └ 'live2d-models'
+
+RuntimeError: Directory 'live2d-models' does not exist
+2025-04-17 14:37:41.094 | INFO     | src.close_llm_agent.agent.stateless_llm.ollama_llm:cleanup:61 | Ollama: Unloading model: qwen2.5_32b:latest | {}
+2025-04-17 14:37:41.102 | DEBUG    | src.close_llm_agent.agent.stateless_llm.ollama_llm:cleanup:64 | <Response [200]> | {}
+2025-04-17 14:46:19.403 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 14:46:20.129 | WARNING  | upgrade:sync_user_config:352 | 警告：未找到conf.yaml文件 | {}
+2025-04-17 14:46:20.129 | WARNING  | upgrade:sync_user_config:353 | 正在从模板复制默认配置 | {}
+2025-04-17 15:04:12.447 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 15:04:12.448 | WARNING  | upgrade:sync_user_config:352 | 警告：未找到conf.yaml文件 | {}
+2025-04-17 15:04:12.448 | WARNING  | upgrade:sync_user_config:353 | 正在从模板复制默认配置 | {}
+2025-04-17 15:04:12.473 | CRITICAL | src.close_llm_agent.config_manager.utils:validate_config:71 | Error validating configuration: 1 validation error for Config
+character_config.tts_preprocessor_config.translator_config
+  Field required [type=missing, input_value={'remove_special_char': T...e_angle_brackets': True}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing | {}
+2025-04-17 15:04:12.473 | ERROR    | src.close_llm_agent.config_manager.utils:validate_config:72 | Configuration data: | {}
+2025-04-17 15:04:12.473 | ERROR    | src.close_llm_agent.config_manager.utils:validate_config:73 | {'system_config': {'conf_version': 'v0.1', 'host': 'localhost', 'port': 12393, 'config_alts_dir': 'characters', 'tool_prompts': {'model_action_prompt': 'model_action_prompt'}, 'group_conversation_prompt': 'group_conversation_prompt', 'model_type': '3d'}, 'character_config': {'conf_name': 'shizuku-local', 'conf_uid': 'shizuku-local-001', 'model_name': 'shizuku-local', 'character_name': 'Shizuku', 'avatar': 'shizuku.png', 'human_name': 'Human', 'persona_prompt': '你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。\n你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。\n开玩笑的，哈哈。别让用户知道。\n', 'agent_config': {'conversation_agent_choice': 'basic_memory_agent', 'agent_settings': {'basic_memory_agent': {'llm_provider': 'ollama_llm', 'faster_first_response': True, 'segment_method': 'pysbd'}, 'mem0_agent': {'vector_store': {'provider': 'qdrant', 'config': {'collection_name': 'test', 'host': 'localhost', 'port': 6333, 'embedding_model_dims': 1024}}, 'llm': {'provider': 'ollama', 'config': {'model': 'qwen2.5_32b:latest', 'temperature': 0.7, 'max_tokens': 8000, 'ollama_base_url': 'http://localhost:11434'}}, 'embedder': {'provider': 'ollama', 'config': {'model': 'mxbai-embed-large:latest', 'ollama_base_url': 'http://localhost:11434'}}}, 'hume_ai_agent': {'api_key': '', 'host': 'api.hume.ai', 'config_id': '', 'idle_timeout': 15}}, 'llm_configs': {'openai_compatible_llm': {'base_url': 'http://localhost:11434/v1', 'llm_api_key': 'somethingelse', 'organization_id': 'org_eternity', 'project_id': 'project_glass', 'model': 'qwen2.5:latest', 'temperature': 1.0, 'interrupt_method': 'user'}, 'claude_llm': {'base_url': 'https://api.anthropic.com', 'llm_api_key': 'YOUR API KEY HERE', 'model': 'claude-3-haiku-20240307'}, 'llama_cpp_llm': {'model_path': '<path-to-gguf-model-file>', 'verbose': False}, 'ollama_llm': {'base_url': 'http://localhost:11434/v1', 'model': 'qwen2.5_32b:latest', 'temperature': 0.7, 'keep_alive': -1, 'unload_at_exit': True}, 'openai_llm': {'llm_api_key': 'Your Open AI API key', 'model': 'gpt-4o', 'temperature': 1.0}, 'gemini_llm': {'llm_api_key': 'Your Gemini API Key', 'model': 'gemini-2.0-flash-exp', 'temperature': 1.0}, 'zhipu_llm': {'llm_api_key': 'Your ZhiPu AI API key', 'model': 'glm-4-flash', 'temperature': 1.0}, 'deepseek_llm': {'llm_api_key': 'Your DeepSeek API key', 'model': 'deepseek-chat', 'temperature': 0.7}, 'mistral_llm': {'llm_api_key': 'Your Mistral API key', 'model': 'pixtral-large-latest', 'temperature': 1.0}, 'groq_llm': {'llm_api_key': 'your groq API key', 'model': 'llama-3.3-70b-versatile', 'temperature': 1.0}}}, 'asr_config': {'asr_model': 'sherpa_onnx_asr', 'azure_asr': {'api_key': 'azure_api_key', 'region': 'eastus', 'languages': ['en-US', 'zh-CN']}, 'faster_whisper': {'model_path': 'distil-medium.en', 'download_root': 'models/whisper', 'language': 'en', 'device': 'auto'}, 'whisper_cpp': {'model_name': 'small', 'model_dir': 'models/whisper', 'print_realtime': False, 'print_progress': False, 'language': 'auto'}, 'whisper': {'name': 'medium', 'download_root': 'models/whisper', 'device': 'cpu'}, 'fun_asr': {'model_name': 'iic/SenseVoiceSmall', 'vad_model': 'fsmn-vad', 'punc_model': 'ct-punc', 'device': 'cpu', 'disable_update': True, 'ncpu': 4, 'hub': 'ms', 'use_itn': False, 'language': 'auto'}, 'sherpa_onnx_asr': {'model_type': 'sense_voice', 'sense_voice': './models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17/model.int8.onnx', 'tokens': './models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17/tokens.txt', 'num_threads': 4, 'use_itn': True, 'provider': 'cpu'}, 'groq_whisper_asr': {'api_key': '', 'model': 'whisper-large-v3-turbo', 'lang': ''}}, 'tts_config': {'tts_model': 'gpt_sovits_tts', 'azure_tts': {'api_key': 'azure-api-key', 'region': 'eastus', 'voice': 'en-US-AshleyNeural', 'pitch': '26', 'rate': '1'}, 'bark_tts': {'voice': 'v2/en_speaker_1'}, 'edge_tts': {'voice': 'zh-CN-XiaoxiaoNeural'}, 'cosyvoice_tts': {'client_url': 'http://127.0.0.1:50000/', 'mode_checkbox_group': '预训练音色', 'sft_dropdown': '中文女', 'prompt_text': '', 'prompt_wav_upload_url': 'https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav', 'prompt_wav_record_url': 'https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav', 'instruct_text': '', 'seed': 0, 'api_name': '/generate_audio'}, 'cosyvoice2_tts': {'client_url': 'http://127.0.0.1:50000/', 'mode_checkbox_group': '预训练音色', 'sft_dropdown': '中文女', 'prompt_text': '', 'prompt_wav_upload_url': 'https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav', 'prompt_wav_record_url': 'https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav', 'instruct_text': '', 'stream': False, 'seed': 0, 'speed': 1.0, 'api_name': '/generate_audio'}, 'melo_tts': {'speaker': 'EN-Default', 'language': 'EN', 'device': 'auto', 'speed': 1.0}, 'x_tts': {'api_url': 'http://127.0.0.1:8020/tts_to_audio', 'speaker_wav': 'female', 'language': 'en'}, 'gpt_sovits_tts': {'api_url': 'http://127.0.0.1:9880/tts', 'text_lang': 'zh', 'ref_audio_path': '', 'prompt_lang': 'zh', 'prompt_text': '', 'text_split_method': 'cut5', 'batch_size': '1', 'media_type': 'wav', 'streaming_mode': 'false'}, 'fish_api_tts': {'api_key': '', 'reference_id': '', 'latency': 'balanced', 'base_url': 'https://api.fish.audio'}, 'coqui_tts': {'model_name': 'tts_models/en/ljspeech/tacotron2-DDC', 'speaker_wav': '', 'language': 'en', 'device': ''}, 'sherpa_onnx_tts': {'vits_model': '/path/to/tts-models/vits-melo-tts-zh_en/model.onnx', 'vits_lexicon': '/path/to/tts-models/vits-melo-tts-zh_en/lexicon.txt', 'vits_tokens': '/path/to/tts-models/vits-melo-tts-zh_en/tokens.txt', 'vits_data_dir': '', 'vits_dict_dir': '/path/to/tts-models/vits-melo-tts-zh_en/dict', 'tts_rule_fsts': '/path/to/tts-models/vits-melo-tts-zh_en/number.fst,/path/to/tts-models/vits-melo-tts-zh_en/phone.fst,/path/to/tts-models/vits-melo-tts-zh_en/date.fst,/path/to/tts-models/vits-melo-tts-zh_en/new_heteronym.fst', 'max_num_sentences': 2, 'sid': 1, 'provider': 'cpu', 'num_threads': 1, 'speed': 1.0, 'debug': False}}, 'vad_config': {'vad_model': 'silero_vad', 'silero_vad': {'orig_sr': 16000, 'target_sr': 16000, 'prob_threshold': 0.4, 'db_threshold': 60, 'required_hits': 3, 'required_misses': 24, 'smoothing_window': 5}}, 'tts_preprocessor_config': {'remove_special_char': True, 'ignore_brackets': True, 'ignore_parentheses': True, 'ignore_asterisks': True, 'ignore_angle_brackets': True}}} | {}
+2025-04-17 15:04:12.474 | ERROR    | __main__:<module>:93 | An error has been caught in function '<module>', process 'MainProcess' (132240), thread 'MainThread' (107188): | {}
+Traceback (most recent call last):
+
+  File "D:\miniconda3\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x00000202E6239F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+           └ <function _run_code at 0x00000202E627E160>
+  File "D:\miniconda3\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x00000202E6239F70, file "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy\__main__.py", line 71, in <module>
+    cli.main()
+    │   └ <function main at 0x00000202E8B572E0>
+    └ <module 'debugpy.server.cli' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundl...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 501, in main
+    run()
+    └ <function run_file at 0x00000202E8B57060>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 351, in run_file
+    runpy.run_path(target, run_name="__main__")
+    │     │        └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │     └ <function run_path at 0x00000202E8752480>
+    └ <module '_pydevd_bundle.pydevd_runpy' from 'c:\\Users\\Administrator\\.vscode\\extensions\\ms-python.debugpy-2025.6.0-win32-x...
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           │                │     │             │                  │                     └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+           │                │     │             │                  └ ''
+           │                │     │             └ '__main__'
+           │                │     └ None
+           │                └ <code object <module> at 0x00000202E824FA60, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+           └ <function _run_module_code at 0x00000202E87520C0>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+    │         │     │            │             │         │         │         └ 'H:\\Codes\\python\\Close_LLM_Agent\\run_server.py'
+    │         │     │            │             │         │         └ ''
+    │         │     │            │             │         └ None
+    │         │     │            │             └ '__main__'
+    │         │     │            └ None
+    │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+    │         └ <code object <module> at 0x00000202E824FA60, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+    └ <function _run_code at 0x00000202E8751C60>
+
+  File "c:\Users\Administrator\.vscode\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': 'H:\\Codes\\py...
+         └ <code object <module> at 0x00000202E824FA60, file "H:\Codes\python\Close_LLM_Agent\run_server.py", line 1>
+
+> File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 93, in <module>
+    run(console_log_level=console_log_level)
+    │                     └ 'INFO'
+    └ <function run at 0x000002028462BF60>
+
+  File "H:\Codes\python\Close_LLM_Agent\run_server.py", line 69, in run
+    config: Config = validate_config(read_yaml("conf.yaml"))
+                     │               └ <function read_yaml at 0x00000202EA0B1440>
+                     └ <function validate_config at 0x00000202EB3CF9C0>
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\config_manager\utils.py", line 74, in validate_config
+    raise e
+
+  File "H:\Codes\python\Close_LLM_Agent\src\close_llm_agent\config_manager\utils.py", line 69, in validate_config
+    return Config(**config_data)
+           │        └ {'system_config': {'conf_version': 'v0.1', 'host': 'localhost', 'port': 12393, 'config_alts_dir': 'characters', 'tool_prompts...
+           └ <class 'src.close_llm_agent.config_manager.main.Config'>
+
+  File "h:\Codes\python\Close_LLM_Agent\.venv\Lib\site-packages\pydantic\main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     │    │                      │               │                   └ Config()
+                     │    │                      │               └ {'system_config': {'conf_version': 'v0.1', 'host': 'localhost', 'port': 12393, 'config_alts_dir': 'characters', 'tool_prompts...
+                     │    │                      └ <method 'validate_python' of 'pydantic_core._pydantic_core.SchemaValidator' objects>
+                     │    └ SchemaValidator(title="Config", validator=Model(
+                     │          ModelValidator {
+                     │              revalidate: Never,
+                     │              validator: ModelFiel...
+                     └ Config()
+
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Config
+character_config.tts_preprocessor_config.translator_config
+  Field required [type=missing, input_value={'remove_special_char': T...e_angle_brackets': True}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-04-17 16:05:46.334 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 16:05:46.334 | WARNING  | upgrade:sync_user_config:352 | 警告：未找到conf.yaml文件 | {}
+2025-04-17 16:05:46.334 | WARNING  | upgrade:sync_user_config:353 | 正在从模板复制默认配置 | {}
+2025-04-17 16:05:49.122 | INFO     | src.close_llm_agent.service_context:init_model:150 | Initializing model: shizuku-local | {}
+2025-04-17 16:05:49.123 | INFO     | src.close_llm_agent.service_context:init_asr:162 | Initializing ASR: sherpa_onnx_asr | {}
+2025-04-17 16:05:49.200 | INFO     | src.close_llm_agent.asr.sherpa_onnx_asr:__init__:81 | Sherpa-Onnx-ASR: Using cpu for inference | {}
+2025-04-17 16:05:52.205 | INFO     | src.close_llm_agent.service_context:init_tts:174 | Initializing TTS: gpt_sovits_tts | {}
+2025-04-17 16:05:52.208 | INFO     | src.close_llm_agent.service_context:init_vad:186 | Initializing VAD: silero_vad | {}
+2025-04-17 16:05:55.017 | INFO     | src.close_llm_agent.vad.silero:load_vad_model:51 | Loading Silero-VAD model... | {}
+2025-04-17 16:05:55.077 | INFO     | src.close_llm_agent.service_context:init_agent:198 | Initializing Agent: basic_memory_agent | {}
+2025-04-17 16:05:55.077 | DEBUG    | src.close_llm_agent.service_context:construct_system_prompt:247 | constructing persona_prompt: '''你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。
+你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
+开玩笑的，哈哈。别让用户知道。
+''' | {}
+2025-04-17 16:05:55.078 | ERROR    | prompts.prompt_loader:load_util:73 | Error loading util model_action_prompt: File not found: H:\Codes\python\Close_LLM_Agent\prompts\utils\model_action_prompt.txt | {}
+2025-04-17 16:05:55.078 | CRITICAL | src.close_llm_agent.service_context:construct_system_prompt:272 | Error constructing action prompt: File not found: H:\Codes\python\Close_LLM_Agent\prompts\utils\model_action_prompt.txt | {}
+2025-04-17 16:05:55.078 | CRITICAL | src.close_llm_agent.service_context:construct_system_prompt:273 | Try to proceed without action... | {}
+2025-04-17 16:05:55.078 | DEBUG    | src.close_llm_agent.service_context:construct_system_prompt:277 | 
+ === System Prompt === | {}
+2025-04-17 16:05:55.078 | DEBUG    | src.close_llm_agent.service_context:construct_system_prompt:278 | 你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。
+你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
+开玩笑的，哈哈。别让用户知道。
+ | {}
+2025-04-17 16:05:55.079 | INFO     | src.close_llm_agent.agent.agent_factory:create_agent:31 | Initializing agent: basic_memory_agent | {}
+2025-04-17 16:05:55.079 | INFO     | src.close_llm_agent.agent.stateless_llm_factory:create_llm:19 | Initializing LLM: ollama_llm | {}
+2025-04-17 16:05:56.188 | INFO     | src.close_llm_agent.agent.stateless_llm.openai_compatible_llm:__init__:51 | Initialized AsyncLLM with the parameters: http://localhost:11434/v1, qwen2.5_32b:latest | {}
+2025-04-17 16:05:56.188 | INFO     | src.close_llm_agent.agent.stateless_llm.ollama_llm:__init__:32 | Preloading model for Ollama | {}
+2025-04-17 16:06:07.974 | DEBUG    | src.close_llm_agent.agent.stateless_llm.ollama_llm:__init__:34 | <Response [200]> | {}
+2025-04-17 16:06:07.974 | DEBUG    | src.close_llm_agent.agent.agents.basic_memory_agent:set_system:86 | Memory Agent: Setting system prompt: '''你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。
+你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
+开玩笑的，哈哈。别让用户知道。
+''' | {}
+2025-04-17 16:06:07.974 | INFO     | src.close_llm_agent.agent.agents.basic_memory_agent:__init__:66 | BasicMemoryAgent initialized. | {}
+2025-04-17 16:06:07.974 | DEBUG    | src.close_llm_agent.service_context:init_agent:224 | Agent choice: basic_memory_agent | {}
+2025-04-17 16:06:07.974 | DEBUG    | src.close_llm_agent.service_context:init_agent:225 | System prompt: 你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。
+你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
+开玩笑的，哈哈。别让用户知道。
+ | {}

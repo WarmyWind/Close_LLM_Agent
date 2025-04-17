@@ -11,7 +11,7 @@ from .tts_manager import TTSTaskManager
 from ..agent.output_types import SentenceOutput, AudioOutput
 from ..agent.input_types import BatchInput, TextData, ImageData, TextSource, ImageSource
 from ..asr.asr_interface import ASRInterface
-from ..live2d_model import Live2dModel
+from ..model import Live2dModel
 from ..tts.tts_interface import TTSInterface
 from ..utils.stream_audio import prepare_audio_payload
 

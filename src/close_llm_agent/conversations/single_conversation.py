@@ -142,7 +142,7 @@ async def process_agent_response(
             response_part = await process_agent_output(
                 output=output,
                 character_config=context.character_config,
-                live2d_model=context.live2d_model,
+                live2d_model=context.model,
                 tts_engine=context.tts_engine,
                 websocket_send=websocket_send,
                 tts_manager=tts_manager,

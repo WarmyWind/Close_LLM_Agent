@@ -61,36 +61,6 @@ class WebSocketServer:
             name="cache",
         )
 
-        # Mount static files
-        self.app.mount(
-            "/live2d-models",
-            StaticFiles(directory="live2d-models"),
-            name="live2d-models",
-        )
-        self.app.mount(
-            "/bg",
-            StaticFiles(directory="backgrounds"),
-            name="backgrounds",
-        )
-        self.app.mount(
-            "/avatars",
-            AvatarStaticFiles(directory="avatars"),
-            name="avatars",
-        )
-
-        # Mount web tool directory separately from frontend
-        self.app.mount(
-            "/web-tool",
-            CustomStaticFiles(directory="web_tool", html=True),
-            name="web_tool",
-        )
-
-        # Mount main frontend last (as catch-all)
-        self.app.mount(
-            "/",
-            CustomStaticFiles(directory="frontend", html=True),
-            name="frontend",
-        )
 
     def run(self):
         pass

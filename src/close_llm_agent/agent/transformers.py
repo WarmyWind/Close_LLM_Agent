@@ -2,7 +2,7 @@ from typing import AsyncIterator, Tuple, Callable, List
 from functools import wraps
 from .output_types import Actions, SentenceOutput, DisplayText
 from ..utils.tts_preprocessor import tts_filter as filter_text
-from ..live2d_model import Live2dModel
+from ..model import Live2dModel
 from ..config_manager import TTSPreprocessorConfig
 from ..utils.sentence_divider import SentenceDivider
 from ..utils.sentence_divider import SentenceWithTags, TagState

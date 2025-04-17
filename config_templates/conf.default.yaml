@@ -1,6 +1,6 @@
 # System Settings: Setting related to the initialization of the server
 system_config:
-  conf_version: 'v1.1.1'
+  conf_version: 'v0.1'
   host: 'localhost' # use 0.0.0.0 if you want other devices to access this page
   port: 12393
   # New setting for alternative configurations
@@ -9,7 +9,7 @@ system_config:
   tool_prompts:
     # This will be appended to the end of system prompt to let LLM include keywords to control facial expressions.
     # Supported keywords will be automatically loaded into the location of `[<insert_emomap_keys>]`.
-    live2d_expression_prompt: 'live2d_expression_prompt'
+    model_action_prompt: 'model_action_prompt' #  loaded into `[<insert_action_keys>]`
     # Enable think_tag_prompt to let LLMs without thinking output show inner thoughts, mental activities and actions (in parentheses format) without voice synthesis. See think_tag_prompt for more details.
     # think_tag_prompt: 'think_tag_prompt'
   group_conversation_prompt: 'group_conversation_prompt' # When using group conversation, this prompt will be added to the memory of each AI participant.
@@ -18,7 +18,7 @@ system_config:
 character_config:
   conf_name: 'shizuku-local' # The name of character configuration file.
   conf_uid: 'shizuku-local-001' # The unique identifier of character configuration.
-  live2d_model_name: 'shizuku-local' # The name of Live2D model. Must be the same as the corresponding name in model_dict.json
+  model_name: 'shizuku-local' # The name of Live2D model. Must be the same as the corresponding name in model_dict.json
   character_name: 'Shizuku' # Will be used in the group conversation and the display name of the AI.
   avatar: 'shizuku.png' # Suggest using a square image for the avatar. Save it in the avatars folder. Leave blank to use the first letter of the character name as the avatar.
   human_name: 'Human' # Will be used in the group conversation and the display name of the human.
@@ -69,8 +69,8 @@ character_config:
         llm:
           provider: 'ollama'
           config:
-            model: 'llama3.1:latest'
-            temperature: 0
+            model: 'qwen2.5_32b:latest'
+            temperature: 0.7
             max_tokens: 8000
             ollama_base_url: 'http://localhost:11434'
 
@@ -118,7 +118,7 @@ character_config:
 
       ollama_llm:
         base_url: 'http://localhost:11434/v1'
-        model: 'qwen2.5:latest'
+        model: 'qwen2.5_32b:latest'
         temperature: 1.0 # value between 0 to 2
         # seconds to keep the model in memory after inactivity. 
         # set to -1 to keep the model in memory forever (even after exiting open llm vtuber)
@@ -251,7 +251,7 @@ character_config:
 
   # =================== Text to Speech ===================
   tts_config:
-    tts_model: 'edge_tts'
+    tts_model: 'gpt_sovits_tts'
     # text to speech model options:
     #   'azure_tts', 'pyttsx3_tts', 'edge_tts', 'bark_tts',
     #   'cosyvoice_tts', 'melo_tts', 'coqui_tts',
@@ -385,22 +385,3 @@ character_config:
     ignore_parentheses: True # ignore everything inside parentheses
     ignore_asterisks: True # ignore everything wrapped inside asterisks
     ignore_angle_brackets: True # ignore everything wrapped inside <text>
-
-    translator_config:
-      # Like... you speak and read the subtitles in English, and the TTS speaks Japanese or that kind of things
-      translate_audio: False # Warning: you need to deploy DeeplX to use this. Otherwise it's going to crash
-      translate_provider: 'deeplx' # deeplx or tencent
-
-      deeplx:
-        deeplx_target_lang: 'JA'
-        deeplx_api_endpoint: 'http://localhost:1188/v2/translate'
-      
-      #  Tencent Text Translation  5 million characters per month  Remember to turn off post-payment, need to manually go to Machine Translation Console > System Settings to disable
-      #   https://cloud.tencent.com/document/product/551/35017
-      #   https://console.cloud.tencent.com/cam/capi
-      tencent:
-        secret_id: ''
-        secret_key: ''
-        region: 'ap-guangzhou'
-        source_lang: 'zh'
-        target_lang: 'ja'

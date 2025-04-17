@@ -5,7 +5,7 @@ from loguru import logger
 from fastapi import WebSocket
 
 from prompts import prompt_loader
-from .live2d_model import Live2dModel
+from .model import UE5Model, Live2dModel
 from .asr.asr_interface import ASRInterface
 from .tts.tts_interface import TTSInterface
 from .vad.vad_interface import VADInterface
@@ -26,7 +26,6 @@ from .config_manager import (
     ASRConfig,
     TTSConfig,
     VADConfig,
-    TranslatorConfig,
     read_yaml,
     validate_config,
 )
@@ -41,7 +40,7 @@ class ServiceContext:
         self.system_config: SystemConfig = None
         self.character_config: CharacterConfig = None
 
-        self.live2d_model: Live2dModel = None
+        self.model: UE5Model | Live2dModel = None
         self.asr_engine: ASRInterface = None
         self.tts_engine: TTSInterface = None
         self.agent_engine: AgentInterface = None
@@ -49,7 +48,7 @@ class ServiceContext:
         self.vad_engine: VADInterface | None = None
         # self.translate_engine: TranslateInterface | None = None
 
-        # the system prompt is a combination of the persona prompt and live2d expression prompt
+        # the system prompt is a combination of the persona prompt and action prompt
         self.system_prompt: str = None
 
         self.history_uid: str = ""  # Add history_uid field
@@ -59,7 +58,7 @@ class ServiceContext:
             f"ServiceContext:\n"
             f"  System Config: {'Loaded' if self.system_config else 'Not Loaded'}\n"
             f"    Details: {json.dumps(self.system_config.model_dump(), indent=6) if self.system_config else 'None'}\n"
-            f"  Live2D Model: {self.live2d_model.model_info if self.live2d_model else 'Not Loaded'}\n"
+            f"  3D Model: {self.model.model_info if self.model else 'Not Loaded'}\n"
             f"  ASR Engine: {type(self.asr_engine).__name__ if self.asr_engine else 'Not Loaded'}\n"
             f"    Config: {json.dumps(self.character_config.asr_config.model_dump(), indent=6) if self.character_config.asr_config else 'None'}\n"
             f"  TTS Engine: {type(self.tts_engine).__name__ if self.tts_engine else 'Not Loaded'}\n"
@@ -78,7 +77,7 @@ class ServiceContext:
         config: Config,
         system_config: SystemConfig,
         character_config: CharacterConfig,
-        live2d_model: Live2dModel,
+        model: UE5Model | Live2dModel,
         asr_engine: ASRInterface,
         tts_engine: TTSInterface,
         vad_engine: VADInterface,
@@ -97,12 +96,11 @@ class ServiceContext:
         self.config = config
         self.system_config = system_config
         self.character_config = character_config
-        self.live2d_model = live2d_model
+        self.model = model
         self.asr_engine = asr_engine
         self.tts_engine = tts_engine
         self.vad_engine = vad_engine
         self.agent_engine = agent_engine
-        # self.translate_engine = translate_engine
 
         logger.debug(f"Loaded service context with cache: {character_config}")
 
@@ -125,8 +123,8 @@ class ServiceContext:
 
         # update all sub-configs
 
-        # init live2d from character config
-        self.init_live2d(config.character_config.live2d_model_name)
+        # init model from character config
+        self.init_model(config.character_config.model_name)
 
         # init asr from character config
         self.init_asr(config.character_config.asr_config)
@@ -143,23 +141,21 @@ class ServiceContext:
             config.character_config.persona_prompt,
         )
 
-        self.init_translate(
-            config.character_config.tts_preprocessor_config.translator_config
-        )
-
         # store typed config references
         self.config = config
         self.system_config = config.system_config or self.system_config
         self.character_config = config.character_config
 
-    def init_live2d(self, live2d_model_name: str) -> None:
-        logger.info(f"Initializing Live2D: {live2d_model_name}")
+    def init_model(self, model_name: str) -> None:
+        logger.info(f"Initializing model: {model_name}")
         try:
-            self.live2d_model = Live2dModel(live2d_model_name)
-            self.character_config.live2d_model_name = live2d_model_name
+            # TODO:
+            # self.model = Model(model_name)
+            # self.character_config.model_name = model_name
+            pass
         except Exception as e:
-            logger.critical(f"Error initializing Live2D: {e}")
-            logger.critical("Try to proceed without Live2D...")
+            logger.critical(f"Error initializing Model: {e}")
+            logger.critical("Try to proceed without Model...")
 
     def init_asr(self, asr_config: ASRConfig) -> None:
         if not self.asr_engine or (self.character_config.asr_config != asr_config):
@@ -220,7 +216,7 @@ class ServiceContext:
                 agent_settings=agent_config.agent_settings.model_dump(),
                 llm_configs=agent_config.llm_configs.model_dump(),
                 system_prompt=system_prompt,
-                live2d_model=self.live2d_model,
+                model=self.model,
                 tts_preprocessor_config=self.character_config.tts_preprocessor_config,
                 character_avatar=avatar,  # Add avatar parameter
             )
@@ -235,33 +231,6 @@ class ServiceContext:
         except Exception as e:
             logger.error(f"Failed to initialize agent: {e}")
             raise
-
-    def init_translate(self, translator_config: TranslatorConfig) -> None:
-        """Initialize or update the translation engine based on the configuration."""
-
-        if not translator_config.translate_audio:
-            logger.debug("Translation is disabled.")
-            return
-
-        if (
-            not self.translate_engine
-            or self.character_config.tts_preprocessor_config.translator_config
-            != translator_config
-        ):
-            logger.info(
-                f"Initializing Translator: {translator_config.translate_provider}"
-            )
-            # self.translate_engine = TranslateFactory.get_translator(
-            #     translator_config.translate_provider,
-            #     getattr(
-            #         translator_config, translator_config.translate_provider
-            #     ).model_dump(),
-            # )
-            self.character_config.tts_preprocessor_config.translator_config = (
-                translator_config
-            )
-        else:
-            logger.info("Translation already initialized with the same config.")
 
     # ==== utils
 
@@ -280,13 +249,28 @@ class ServiceContext:
         for prompt_name, prompt_file in self.system_config.tool_prompts.items():
             if prompt_name == "group_conversation_prompt":
                 continue
-
-            prompt_content = prompt_loader.load_util(prompt_file)
-
+            
+            prompt_content = ''
             if prompt_name == "live2d_expression_prompt":
-                prompt_content = prompt_content.replace(
-                    "[<insert_emomap_keys>]", self.live2d_model.emo_str
-                )
+                try:
+                    prompt_content = prompt_loader.load_util(prompt_file)
+                    prompt_content = prompt_content.replace(
+                        "[<insert_emomap_keys>]", self.model.emo_str
+                    )
+                except Exception as e:
+                    logger.critical(f"Error constructing expression prompt: {e}")
+                    logger.critical("Try to proceed without emo...")
+                
+                
+            if prompt_name == "model_action_prompt":
+                try:
+                    prompt_content = prompt_loader.load_util(prompt_file)
+                    prompt_content = prompt_content.replace(
+                        "[<insert_actionmap_keys>]", self.model.action_str
+                    )
+                except Exception as e:
+                    logger.critical(f"Error constructing action prompt: {e}")
+                    logger.critical("Try to proceed without action...")
 
             persona_prompt += prompt_content
 
@@ -349,7 +333,7 @@ class ServiceContext:
                     json.dumps(
                         {
                             "type": "set-model-and-conf",
-                            "model_info": self.live2d_model.model_info,
+                            "model_info": self.model.model_info,
                             "conf_name": self.character_config.conf_name,
                             "conf_uid": self.character_config.conf_uid,
                         }

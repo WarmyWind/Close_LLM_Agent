@@ -6,21 +6,22 @@
 
 # 系统设置：与服务器初始化相关的设置
 system_config:
-  conf_version: 'v1.1.1' # 配置文件版本
+  conf_version: 'v0.1' # 配置文件版本
   host: 'localhost' # 服务器监听的地址，'0.0.0.0' 表示监听所有网络接口；如果需要安全，可以使用 '127.0.0.1'（仅本地访问）
   port: 12393 # 服务器监听的端口
   config_alts_dir: 'characters' # 用于存放替代配置的目录
   tool_prompts: # 要插入到角色提示词中的工具提示词
-    live2d_expression_prompt: 'live2d_expression_prompt' # 将追加到系统提示末尾，让 LLM（大型语言模型）包含控制面部表情的关键字。支持的关键字将自动加载到 `[<insert_emomap_keys>]` 的位置。
+    model_action_prompt: 'model_action_prompt' # 将追加到系统提示末尾，让 LLM 包含控制模型动作的关键字。支持的关键字将自动加载到 `[<insert_action_keys>]` 的位置。
     # 启用 think_tag_prompt 可让不具备思考输出的 LLM 也能展示内心想法、心理活动和动作（以括号形式呈现），但不会进行语音合成。更多详情请参考 think_tag_prompt。
     # think_tag_prompt: 'think_tag_prompt'
   group_conversation_prompt: 'group_conversation_prompt' # 当使用群聊时，此提示词将添加到每个 AI 参与者的记忆中。
+  model_type: '3d' # 模型类型，'live2d' 或 '3d'
 
 # 默认角色的配置
 character_config:
   conf_name: 'shizuku-local' # 角色配置文件的名称
   conf_uid: 'shizuku-local-001' # 角色配置的唯一标识符
-  live2d_model_name: 'shizuku-local' # Live2D 模型名称
+  model_name: 'shizuku-local' # Live2D 模型名称
   character_name: 'Shizuku' # 将在群聊中使用，并显示为 AI 的名称。
   avatar: 'shizuku.png' # 建议使用正方形图像作为头像。将其保存到 avatars 文件夹中。留空则使用角色名称的首字母作为头像。
   human_name: 'Human' # 将在群聊中使用，并显示为人类的名称。
@@ -69,8 +70,8 @@ character_config:
         llm:
           provider: 'ollama' # 使用的 LLM 提供商
           config:
-            model: 'llama3.1:latest' # 使用的模型
-            temperature: 0 # 温度
+            model: 'qwen2.5_32b:latest' # 使用的模型
+            temperature: 0.7 # 温度
             max_tokens: 8000 # 最大令牌数
             ollama_base_url: 'http://localhost:11434' # Ollama 基础 URL
 
@@ -117,8 +118,8 @@ character_config:
 
       ollama_llm:
         base_url: 'http://localhost:11434/v1' # 基础 URL
-        model: 'qwen2.5:latest' # 使用的模型
-        temperature: 1.0 # 温度，介于 0 到 2 之间
+        model: 'qwen2.5_32b:latest' # 使用的模型
+        temperature: 0.7 # 温度，介于 0 到 2 之间
         # 不活动后模型在内存中保留的时间（秒）
         # 设置为 -1 表示模型将永远保留在内存中（即使退出 open llm vtuber 之后也是）
         keep_alive: -1
@@ -247,7 +248,7 @@ character_config:
 
   # =================== 文本转语音 ===================
   tts_config:
-    tts_model: 'edge_tts' # 使用的文本转语音模型
+    tts_model: 'gpt_sovits_tts' # 使用的文本转语音模型
     # 文本转语音模型选项：
     #   'azure_tts', 'pyttsx3_tts', 'edge_tts', 'bark_tts',
     #   'cosyvoice_tts', 'melo_tts', 'coqui_tts',
@@ -381,19 +382,3 @@ character_config:
     ignore_parentheses: True # 从音频生成中删除括号包住的内容
     ignore_asterisks: True # 从音频生成中删除星号包住的内容(单双星号)
     ignore_angle_brackets: True # 从音频生成中删除尖括号包住的内容
-
-    translator_config:
-      # 比如...你说话并阅读英语字幕，而 TTS 说日语之类的
-      translate_audio: False # 警告：请确保翻译引擎配置成功再开启此选项，否则会翻译失败
-      translate_provider: 'deeplx' # 翻译提供商, 目前支持 deeplx 或 tencent
-
-
-      #  腾讯文本翻译  每月500万字符  记得关闭后付费,需要手动前往 机器翻译控制台 > 系统设置 关闭
-      #   https://cloud.tencent.com/document/product/551/35017
-      #   https://console.cloud.tencent.com/cam/capi
-      tencent:
-        secret_id: ''
-        secret_key: ''
-        region: 'ap-guangzhou'
-        source_lang: 'zh'
-        target_lang: 'ja'
