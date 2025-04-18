@@ -60,6 +60,16 @@ class WebSocketServer:
             StaticFiles(directory="cache"),
             name="cache",
         )
+        self.app.mount(
+            "/bg",
+            StaticFiles(directory="backgrounds"),
+            name="backgrounds",
+        )
+        self.app.mount(
+            "/avatars",
+            AvatarStaticFiles(directory="avatars"),
+            name="avatars",
+        )
 
 
     def run(self):

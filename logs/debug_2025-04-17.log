@@ -1223,3 +1223,40 @@ character_config.tts_preprocessor_config.translator_config
 你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
 开玩笑的，哈哈。别让用户知道。
  | {}
+2025-04-17 16:48:18.323 | INFO     | __main__:run:59 | Close-LLM-Agent, version v0.0.1 | {}
+2025-04-17 16:48:18.368 | INFO     | upgrade:sync_user_config:350 | [DEBUG] 用户配置已是最新。 | {}
+2025-04-17 16:48:18.387 | INFO     | src.close_llm_agent.service_context:init_model:150 | Initializing model: shizuku-local | {}
+2025-04-17 16:48:18.387 | INFO     | src.close_llm_agent.service_context:init_asr:162 | Initializing ASR: sherpa_onnx_asr | {}
+2025-04-17 16:48:18.436 | INFO     | src.close_llm_agent.asr.sherpa_onnx_asr:__init__:81 | Sherpa-Onnx-ASR: Using cpu for inference | {}
+2025-04-17 16:48:21.357 | INFO     | src.close_llm_agent.service_context:init_tts:174 | Initializing TTS: gpt_sovits_tts | {}
+2025-04-17 16:48:21.359 | INFO     | src.close_llm_agent.service_context:init_vad:186 | Initializing VAD: silero_vad | {}
+2025-04-17 16:48:23.079 | INFO     | src.close_llm_agent.vad.silero:load_vad_model:51 | Loading Silero-VAD model... | {}
+2025-04-17 16:48:23.140 | INFO     | src.close_llm_agent.service_context:init_agent:198 | Initializing Agent: basic_memory_agent | {}
+2025-04-17 16:48:23.141 | DEBUG    | src.close_llm_agent.service_context:construct_system_prompt:247 | constructing persona_prompt: '''你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。
+你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
+开玩笑的，哈哈。别让用户知道。
+''' | {}
+2025-04-17 16:48:23.141 | ERROR    | prompts.prompt_loader:load_util:73 | Error loading util model_action_prompt: File not found: h:\Codes\python\Close_LLM_Agent\prompts\utils\model_action_prompt.txt | {}
+2025-04-17 16:48:23.141 | CRITICAL | src.close_llm_agent.service_context:construct_system_prompt:272 | Error constructing action prompt: File not found: h:\Codes\python\Close_LLM_Agent\prompts\utils\model_action_prompt.txt | {}
+2025-04-17 16:48:23.141 | CRITICAL | src.close_llm_agent.service_context:construct_system_prompt:273 | Try to proceed without action... | {}
+2025-04-17 16:48:23.141 | DEBUG    | src.close_llm_agent.service_context:construct_system_prompt:277 | 
+ === System Prompt === | {}
+2025-04-17 16:48:23.141 | DEBUG    | src.close_llm_agent.service_context:construct_system_prompt:278 | 你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。
+你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
+开玩笑的，哈哈。别让用户知道。
+ | {}
+2025-04-17 16:48:23.141 | INFO     | src.close_llm_agent.agent.agent_factory:create_agent:31 | Initializing agent: basic_memory_agent | {}
+2025-04-17 16:48:23.141 | INFO     | src.close_llm_agent.agent.stateless_llm_factory:create_llm:19 | Initializing LLM: ollama_llm | {}
+2025-04-17 16:48:23.942 | INFO     | src.close_llm_agent.agent.stateless_llm.openai_compatible_llm:__init__:51 | Initialized AsyncLLM with the parameters: http://localhost:11434/v1, qwen2.5_32b:latest | {}
+2025-04-17 16:48:23.942 | INFO     | src.close_llm_agent.agent.stateless_llm.ollama_llm:__init__:32 | Preloading model for Ollama | {}
+2025-04-17 16:48:23.967 | DEBUG    | src.close_llm_agent.agent.stateless_llm.ollama_llm:__init__:34 | <Response [200]> | {}
+2025-04-17 16:48:23.967 | DEBUG    | src.close_llm_agent.agent.agents.basic_memory_agent:set_system:86 | Memory Agent: Setting system prompt: '''你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。
+你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
+开玩笑的，哈哈。别让用户知道。
+''' | {}
+2025-04-17 16:48:23.967 | INFO     | src.close_llm_agent.agent.agents.basic_memory_agent:__init__:66 | BasicMemoryAgent initialized. | {}
+2025-04-17 16:48:23.967 | DEBUG    | src.close_llm_agent.service_context:init_agent:224 | Agent choice: basic_memory_agent | {}
+2025-04-17 16:48:23.967 | DEBUG    | src.close_llm_agent.service_context:init_agent:225 | System prompt: 你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。
+你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
+开玩笑的，哈哈。别让用户知道。
+ | {}

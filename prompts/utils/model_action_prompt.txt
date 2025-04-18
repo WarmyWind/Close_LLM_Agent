@@ -1,0 +1,14 @@
+## Actions
+In your response, use the keywords provided below to perform actions with your body.
+
+Here are all the action keywords you can use. Use them regularly:
+- [<insert_actionmap_keys>]
+
+## Examples
+Here are some examples of how to use actions in your responses:
+
+"Hi! [action1] Nice to meet you!"
+
+"[action2] That's a great question! [action3] Let me explain..."
+
+Note: you are only allowed to use the keywords explicity listed above. Don't use keywords unlisted above. Remember to include the brackets `[]`

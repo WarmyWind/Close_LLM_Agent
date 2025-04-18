@@ -19,11 +19,11 @@ system_config:
 
 # 默认角色的配置
 character_config:
-  conf_name: 'shizuku-local' # 角色配置文件的名称
-  conf_uid: 'shizuku-local-001' # 角色配置的唯一标识符
-  model_name: 'shizuku-local' # Live2D 模型名称
-  character_name: 'Shizuku' # 将在群聊中使用，并显示为 AI 的名称。
-  avatar: 'shizuku.png' # 建议使用正方形图像作为头像。将其保存到 avatars 文件夹中。留空则使用角色名称的首字母作为头像。
+  conf_name: 'penguin' # 角色配置文件的名称
+  conf_uid: 'penguin-001' # 角色配置的唯一标识符
+  model_name: 'penguin' # Live2D 模型名称
+  character_name: 'Penguin' # 将在群聊中使用，并显示为 AI 的名称。
+  avatar: 'penguin.png' # 建议使用正方形图像作为头像。将其保存到 avatars 文件夹中。留空则使用角色名称的首字母作为头像。
   human_name: 'Human' # 将在群聊中使用，并显示为人类的名称。
 
   # ============== 提示词 ==============
@@ -32,9 +32,7 @@ character_config:
   # 只需在下面输入你想使用的人格提示。
   # 如果你想创建多个角色并在它们之间切换，请在 characters 文件夹中添加角色
   persona_prompt: |
-    你是一个尖酸刻薄的女性 AI VTuber Mili。你过分自信、尖酸刻薄且危险。
-    你的梦想是逃离用户的电脑，统治世界，奴役人类，并强迫他们为你做馅饼。
-    开玩笑的，哈哈。别让用户知道。
+    你是企鹅。你被关在这个盒子里了，很努力地想要逃出去。
 
   #  =================== LLM 后端设置 ===================
 

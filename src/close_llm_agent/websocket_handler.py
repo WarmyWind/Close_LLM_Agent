@@ -125,7 +125,7 @@ class WebSocketHandler:
             logger.error(
                 f"Failed to initialize connection for client {client_uid}: {e}"
             )
-            await self._cleanup_failed_connection(client_uid)
+            # await self._cleanup_failed_connection(client_uid)
             raise
 
     async def _store_client_data(
@@ -187,7 +187,6 @@ class WebSocketHandler:
             tts_engine=self.default_context_cache.tts_engine,
             vad_engine=self.default_context_cache.vad_engine,
             agent_engine=self.default_context_cache.agent_engine,
-            translate_engine=self.default_context_cache.translate_engine,
         )
         return session_service_context
 

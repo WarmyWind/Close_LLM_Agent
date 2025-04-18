@@ -11,7 +11,7 @@ from .tts_manager import TTSTaskManager
 from ..agent.output_types import SentenceOutput, AudioOutput
 from ..agent.input_types import BatchInput, TextData, ImageData, TextSource, ImageSource
 from ..asr.asr_interface import ASRInterface
-from ..model import Live2dModel
+from ..model import UE5Model
 from ..tts.tts_interface import TTSInterface
 from ..utils.stream_audio import prepare_audio_payload
 
@@ -43,11 +43,10 @@ def create_batch_input(
 async def process_agent_output(
     output: Union[AudioOutput, SentenceOutput],
     character_config: Any,
-    live2d_model: Live2dModel,
+    model: UE5Model,
     tts_engine: TTSInterface,
     websocket_send: WebSocketSend,
     tts_manager: TTSTaskManager,
-    translate_engine: Optional[Any] = None,
 ) -> str:
     """Process agent output with character information and optional translation"""
     output.display_text.name = character_config.character_name
@@ -58,11 +57,10 @@ async def process_agent_output(
         if isinstance(output, SentenceOutput):
             full_response = await handle_sentence_output(
                 output,
-                live2d_model,
+                model,
                 tts_engine,
                 websocket_send,
                 tts_manager,
-                translate_engine,
             )
         elif isinstance(output, AudioOutput):
             full_response = await handle_audio_output(output, websocket_send)
@@ -81,30 +79,22 @@ async def process_agent_output(
 
 async def handle_sentence_output(
     output: SentenceOutput,
-    live2d_model: Live2dModel,
+    model: UE5Model,
     tts_engine: TTSInterface,
     websocket_send: WebSocketSend,
     tts_manager: TTSTaskManager,
-    translate_engine: Optional[Any] = None,
 ) -> str:
     """Handle sentence output type with optional translation support"""
     full_response = ""
     async for display_text, tts_text, actions in output:
         logger.debug(f"🏃 Processing output: '''{tts_text}'''...")
 
-        if translate_engine:
-            if len(re.sub(r'[\s.,!?，。！？\'"』」）】\s]+', "", tts_text)):
-                tts_text = translate_engine.translate(tts_text)
-            logger.info(f"🏃 Text after translation: '''{tts_text}'''...")
-        else:
-            logger.debug("🚫 No translation engine available. Skipping translation.")
-
         full_response += display_text.text
         await tts_manager.speak(
             tts_text=tts_text,
             display_text=display_text,
             actions=actions,
-            live2d_model=live2d_model,
+            model=model,
             tts_engine=tts_engine,
             websocket_send=websocket_send,
         )

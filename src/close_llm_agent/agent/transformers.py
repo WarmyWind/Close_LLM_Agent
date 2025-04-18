@@ -2,7 +2,7 @@ from typing import AsyncIterator, Tuple, Callable, List
 from functools import wraps
 from .output_types import Actions, SentenceOutput, DisplayText
 from ..utils.tts_preprocessor import tts_filter as filter_text
-from ..model import Live2dModel
+from ..model import UE5Model
 from ..config_manager import TTSPreprocessorConfig
 from ..utils.sentence_divider import SentenceDivider
 from ..utils.sentence_divider import SentenceWithTags, TagState
@@ -43,7 +43,7 @@ def sentence_divider(
     return decorator
 
 
-def actions_extractor(live2d_model: Live2dModel):
+def actions_extractor(model: UE5Model):
     """
     Decorator that extracts actions from sentences
     """
@@ -58,13 +58,13 @@ def actions_extractor(live2d_model: Live2dModel):
             sentence_stream = func(*args, **kwargs)
             async for sentence in sentence_stream:
                 actions = Actions()
-                # Only extract emotions for non-tag text
+                # Only extract actions for non-tag text
                 if not any(
                     tag.state in [TagState.START, TagState.END] for tag in sentence.tags
                 ):
-                    expressions = live2d_model.extract_emotion(sentence.text)
-                    if expressions:
-                        actions.expressions = expressions
+                    act = model.extract_action(sentence.text)
+                    if act:
+                        actions.actions = act
                 yield sentence, actions
 
         return wrapper

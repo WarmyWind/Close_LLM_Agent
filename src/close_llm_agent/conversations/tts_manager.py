@@ -7,7 +7,7 @@ from typing import List, Optional, Dict
 from loguru import logger
 
 from ..agent.output_types import DisplayText, Actions
-from ..model import Live2dModel
+from ..model import UE5Model
 from ..tts.tts_interface import TTSInterface
 from ..utils.stream_audio import prepare_audio_payload
 from .types import WebSocketSend
@@ -32,7 +32,7 @@ class TTSTaskManager:
         tts_text: str,
         display_text: DisplayText,
         actions: Optional[Actions],
-        live2d_model: Live2dModel,
+        model: UE5Model,
         tts_engine: TTSInterface,
         websocket_send: WebSocketSend,
     ) -> None:
@@ -42,8 +42,8 @@ class TTSTaskManager:
         Args:
             tts_text: Text to synthesize
             display_text: Text to display in UI
-            actions: Live2D model actions
-            live2d_model: Live2D model instance
+            actions: model actions
+            model: model instance
             tts_engine: TTS engine instance
             websocket_send: WebSocket send function
         """
@@ -82,7 +82,7 @@ class TTSTaskManager:
                 tts_text=tts_text,
                 display_text=display_text,
                 actions=actions,
-                live2d_model=live2d_model,
+                model=model,
                 tts_engine=tts_engine,
                 sequence_number=current_sequence,
             )
@@ -132,7 +132,7 @@ class TTSTaskManager:
         tts_text: str,
         display_text: DisplayText,
         actions: Optional[Actions],
-        live2d_model: Live2dModel,
+        model: UE5Model,
         tts_engine: TTSInterface,
         sequence_number: int,
     ) -> None:

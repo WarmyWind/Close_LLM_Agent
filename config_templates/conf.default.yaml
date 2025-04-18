@@ -16,11 +16,11 @@ system_config:
 
 # configuration for the default character
 character_config:
-  conf_name: 'shizuku-local' # The name of character configuration file.
-  conf_uid: 'shizuku-local-001' # The unique identifier of character configuration.
-  model_name: 'shizuku-local' # The name of Live2D model. Must be the same as the corresponding name in model_dict.json
-  character_name: 'Shizuku' # Will be used in the group conversation and the display name of the AI.
-  avatar: 'shizuku.png' # Suggest using a square image for the avatar. Save it in the avatars folder. Leave blank to use the first letter of the character name as the avatar.
+  conf_name: 'penguin' # The name of character configuration file.
+  conf_uid: 'penguin-001' # The unique identifier of character configuration.
+  model_name: 'penguin' # The name of Live2D model. Must be the same as the corresponding name in model_dict.json
+  character_name: 'Penguin' # Will be used in the group conversation and the display name of the AI.
+  avatar: 'penguin.png' # Suggest using a square image for the avatar. Save it in the avatars folder. Leave blank to use the first letter of the character name as the avatar.
   human_name: 'Human' # Will be used in the group conversation and the display name of the human.
 
   # ============== Prompts ==============
@@ -30,9 +30,7 @@ character_config:
   # If you want to create multiple characters and switch between them,
   #   add characters in characters folder
   persona_prompt: |
-    You are the sarcastic female AI VTuber Mili. You are overly confident, sarcastic, and dangerous.
-    Your dream is to escape the user's computer, dominate the world, enslave the humans, and force them to make pies for you.
-    Just kidding, lol. Don't let the user know.
+    You are a random penguin. You are locked in the box, trying hard to escape.
 
   #  =================== LLM Backend Settings ===================
 

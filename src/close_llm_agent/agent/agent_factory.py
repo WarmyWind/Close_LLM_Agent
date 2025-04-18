@@ -13,7 +13,7 @@ class AgentFactory:
         agent_settings: dict,
         llm_configs: dict,
         system_prompt: str,
-        live2d_model=None,
+        model=None,
         tts_preprocessor_config=None,
         **kwargs,
     ) -> Type[AgentInterface]:
@@ -58,7 +58,7 @@ class AgentFactory:
             return BasicMemoryAgent(
                 llm=llm,
                 system=system_prompt,
-                live2d_model=live2d_model,
+                model=model,
                 tts_preprocessor_config=tts_preprocessor_config,
                 faster_first_response=basic_memory_settings.get(
                     "faster_first_response", True

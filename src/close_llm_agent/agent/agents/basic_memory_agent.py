@@ -1,6 +1,6 @@
 from typing import AsyncIterator, List, Dict, Any, Callable, Literal
 from loguru import logger
-
+from ...model import UE5Model
 from .agent_interface import AgentInterface
 from ..output_types import SentenceOutput, DisplayText
 from ..stateless_llm.stateless_llm_interface import StatelessLLMInterface
@@ -32,7 +32,7 @@ class BasicMemoryAgent(AgentInterface):
         self,
         llm: StatelessLLMInterface,
         system: str,
-        live2d_model,
+        model: UE5Model,
         tts_preprocessor_config: TTSPreprocessorConfig = None,
         faster_first_response: bool = True,
         segment_method: str = "pysbd",
@@ -44,7 +44,7 @@ class BasicMemoryAgent(AgentInterface):
         Args:
             llm: `StatelessLLMInterface` - The LLM to use
             system: `str` - System prompt
-            live2d_model: `Live2dModel` - Model for expression extraction
+            model: `UE5Model` - Model for expression extraction
             tts_preprocessor_config: `TTSPreprocessorConfig` - Configuration for TTS preprocessing
             faster_first_response: `bool` - Whether to enable faster first response
             segment_method: `str` - Method for sentence segmentation
@@ -54,7 +54,7 @@ class BasicMemoryAgent(AgentInterface):
         """
         super().__init__()
         self._memory = []
-        self._live2d_model = live2d_model
+        self._model = model
         self._tts_preprocessor_config = tts_preprocessor_config
         self._faster_first_response = faster_first_response
         self._segment_method = segment_method
@@ -247,7 +247,7 @@ class BasicMemoryAgent(AgentInterface):
 
         @tts_filter(self._tts_preprocessor_config)
         @display_processor()
-        @actions_extractor(self._live2d_model)
+        @actions_extractor(self._model)
         @sentence_divider(
             faster_first_response=self._faster_first_response,
             segment_method=self._segment_method,

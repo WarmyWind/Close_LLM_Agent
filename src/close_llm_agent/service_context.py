@@ -5,7 +5,7 @@ from loguru import logger
 from fastapi import WebSocket
 
 from prompts import prompt_loader
-from .model import UE5Model, Live2dModel
+from .model import UE5Model
 from .asr.asr_interface import ASRInterface
 from .tts.tts_interface import TTSInterface
 from .vad.vad_interface import VADInterface
@@ -40,7 +40,7 @@ class ServiceContext:
         self.system_config: SystemConfig = None
         self.character_config: CharacterConfig = None
 
-        self.model: UE5Model | Live2dModel = None
+        self.model: UE5Model = None
         self.asr_engine: ASRInterface = None
         self.tts_engine: TTSInterface = None
         self.agent_engine: AgentInterface = None
@@ -77,7 +77,7 @@ class ServiceContext:
         config: Config,
         system_config: SystemConfig,
         character_config: CharacterConfig,
-        model: UE5Model | Live2dModel,
+        model: UE5Model,
         asr_engine: ASRInterface,
         tts_engine: TTSInterface,
         vad_engine: VADInterface,
@@ -149,10 +149,8 @@ class ServiceContext:
     def init_model(self, model_name: str) -> None:
         logger.info(f"Initializing model: {model_name}")
         try:
-            # TODO:
-            # self.model = Model(model_name)
-            # self.character_config.model_name = model_name
-            pass
+            self.model = UE5Model(model_name)
+            self.character_config.model_name = model_name
         except Exception as e:
             logger.critical(f"Error initializing Model: {e}")
             logger.critical("Try to proceed without Model...")
